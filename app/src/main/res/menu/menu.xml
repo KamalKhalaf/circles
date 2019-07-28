@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!--<item android:title="Item"-->
+        <!--android:icon="@drawable/ic_home"-->
+        <!--app:showAsAction="always"-->
+        <!--/>-->
+
+    <!--<item android:title="Item"-->
+        <!--android:icon="@drawable/ic_map_pin"-->
+        <!--app:showAsAction="always"-->
+        <!--/>-->
+
+
+
+    <!--<item android:title=""-->
+        <!--app:showAsAction="always"-->
+        <!--/>-->
+
+    <!--<item android:title="Item"-->
+        <!--android:icon="@drawable/ic_profile"-->
+        <!--app:showAsAction="always"-->
+        <!--/>-->
+    <!--<item android:title="Item"-->
+        <!--android:icon="@drawable/ic_support"-->
+        <!--app:showAsAction="always"-->
+        <!--/>-->
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/nearby"
+        android:enabled="true"
+        android:icon="@drawable/map_pin_silhouette"
+        android:title="Nearby"
+        app:showAsAction="always" />
+
+    <item android:title=""
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/profile"
+        android:title="Profile"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/chats"
+        android:enabled="true"
+        android:icon="@drawable/support"
+        android:title="Chats"
+        app:showAsAction="always" />
+</menu>

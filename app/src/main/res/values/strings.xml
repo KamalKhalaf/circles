@@ -1,0 +1,113 @@
+<resources>
+    <string name="app_name">circles</string>
+    <string name="sign_up">Sign up</string>
+    <string name="login">Login</string>
+    <string name="david">\@Dave</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dont_have_acc_sign_up">You don\'t have an account? <u>SIGN UP</u> </string>
+    <string name="terms_condition"><u>Terms and Conditions</u></string>
+
+    <string name="facebook_app_id">339235860242073</string>
+    <string name="fb_login_protocol_scheme">fb339235860242073</string>
+    <string name="network_error">network error</string>
+    <string name="invalid_credentials">invalid credential</string>
+    <string name="general_error">error</string>
+    <string name="please_wait">please Wait…</string>
+    <string name="create_event">Create Event</string>
+    <string name="attach_a_cover_image">Attach a cover image</string>
+    <string name="pick_event_location">Pick Event Location</string>
+    <string name="event_name">Event Name</string>
+    <string name="group_name">Group Name</string>
+    <string name="create_group">Create Group</string>
+    <string name="attach_multiple_images">Attach Multiple Images</string>
+    <string name="create_new_event">Create New Event</string>
+    <string name="add_more_images">Attach More Images</string>
+    <string name="please_select_loc">please Select Location</string>
+
+    <!-- Record Audio & Preview Audio Strings-->
+    <string name="submit_your_voice_note">Submit you voice note</string>
+    <string name="submit">Submit</string>
+    <string name="recorded_audio_remaining_time">-%1$s</string>
+    <string name="gps_network_not_enabled">you mus enable gps to procees this feature</string>
+    <string name="open_location_settings">open gps</string>
+    <string name="Cancel">cancel</string>
+    <string name="add_comment_optional">Add Comment (optional)</string>
+    <string name="attach_an_image_optional">Attach an image (optional)</string>
+    <string name="_0_00">0:00</string>
+    <string name="post_to_timeline">Post to timeline</string>
+    <string name="type_your_message">Type you message…</string>
+    <string name="add_new_comment">add new comment</string>
+    <string name="add_comment">add comment</string>
+    <string name="add_new_reply">add new reply</string>
+    <string name="add_reply">add reply</string>
+    <string name="you">You</string>
+    <string name="home">Home</string>
+    <string name="nearBy">NearBy</string>
+    <string name="profile">Profile</string>
+    <string name="chat">Chats</string>
+    <string name="post_now">Post Now</string>
+    <string name="add_new">Add New</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="socketTimeout">Socket Time Out</string>
+    <string name="jsonError">Json Error</string>
+    <string name="connectionError">Connection Error</string>
+    <string name="serverError">Server Error</string>
+    <string name="no_internet_connection">No Internet Connection</string>
+    <string name="create_poll">Post a poll to chat</string>
+    <string name="scan_an_user_qr_code">Scan an user QR Code</string>
+    <string name="follow">Follow</string>
+    <string name="search_for_friends_or_events">Search for Friends or Events</string>
+    <string name="join_group">join group now</string>
+    <string name="following">Following</string>
+    <string name="title_activity_search_group_map">Map</string>
+    <string name="close">close</string>
+    <string name="share">share</string>
+    <string name="string_permission_help">Help</string>
+    <string name="string_permission_help_text">The permission is missing.\\n\\nTo grant this permission click on Settings, then Permissions and turn the permission on.\\n\\nThen click back twice to return to the app</string>
+    <string name="string_permission_quit">Exit App</string>
+    <string name="string_settings">Setting</string>
+    <string name="rec_fail_mkdir">error on recording</string>
+    <string name="rec_start">statr recording</string>
+    <string name="rec_saved">record saving</string>
+    <string name="slide_to_cancel">\"Slide to cancel\"</string>
+    <string name="NoRecent">No recent</string>
+    <string name="forgot_password">Forget your password ?</string>
+    <string name="reset_password">Reset your password ?</string>
+
+
+    <string name="error">Error</string>
+    <string name="password_6_chr">Password need to be more than 6 characters</string>
+    <string name="forgotyourpassword">Forgot your password?</string>
+    <string name="enteryouremailbelow">Enter your e-mail below to reset your password</string>
+    <string name="submit2">SUBMIT</string>
+    <string name="youremail">Your E-mail</string>
+    <string name="email_not_exist">Email does not exist</string>
+    <string name="update_failed">Failed to update</string>
+    <string name="date_updated">Updated successfully</string>
+    <string name="miss_email">Please enter correct email</string>
+    <string name="attach_another_sound">Change the record</string>
+    <string name="change_image">Change the attatched image</string>
+    <string name="miss_record">You should record voice or select sound</string>
+    <string name="miss_birthday">Birthday is required</string>
+    <string name="miss_gender">Gender is required</string>
+    <string name="miss_ConfirmationCode">Enter correct confirmation code</string>
+    <string name="miss_pass">Password should be atleast 8 character long</string>
+    <string name="miss_match">Passwords should match</string>
+    <string name="demand_data">Enter the demand data to reset your password</string>
+    <string name="resre">RESET</string>
+    <string name="loading">loading...</string>
+    <string name="pleasewait">please wait</string>
+    <string name="update_post">Update your post</string>
+    <string name="add_text">add text for post</string>
+    <string name="change_add_image">Change or add the image</string>
+    <string name="uploadfailed">Upload Failed</string>
+    <string name="uploadcompleted">Upload completed</string>
+    <string name="Uploading">Uploading</string>
+    <string name="uploadinprogress">upload in progress</string>
+    <string name="channel_name">channel</string>
+    <string name="REQUEST_CODE">"27072"</string>
+    <string name="no_list_items">No Data Found</string>
+
+</resources>

@@ -1,0 +1,24 @@
+<layout>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="?attr/colorPrimaryDark"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+
+    <TextView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:text="sdsad"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:id="@+id/title"
+        android:gravity="left|center"
+        android:layout_marginLeft="20dp"
+        />
+
+</android.support.v7.widget.Toolbar>
+</layout>

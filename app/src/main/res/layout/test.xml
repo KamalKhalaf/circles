@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bitmap"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <ImageView
+        android:id="@+id/profile_picture"
+        android:layout_width="51dp"
+        android:layout_height="51dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/sign_up_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_toRightOf="@id/profile_picture"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/profile_picture"
+        app:layout_constraintTop_toTopOf="@+id/profile_picture"
+        tools:text="David Magdy Nawar" />
+
+    <TextView
+        android:id="@+id/user_unique_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:layout_marginTop="4dp"
+        android:layout_toRightOf="@+id/profile_picture"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_picture"
+        app:layout_constraintEnd_toEndOf="@+id/userName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/userName"
+        app:layout_constraintTop_toBottomOf="@+id/userName"
+        tools:text="@string/david" />
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/separator"
+        android:layout_toLeftOf="@id/separator"
+        android:textColor="#6b6b6b"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/user_unique_name"
+        tools:layout_editor_absoluteX="196dp"
+        tools:text="Age : 25" />
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:layout_toLeftOf="@id/location"
+        android:text=" | "
+        android:textColor="#6b6b6b"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/age"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toTopOf="@+id/age" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userName"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="12dp"
+        android:textColor="#6b6b6b"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/age"
+        app:layout_constraintBottom_toBottomOf="@+id/separator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/separator"
+        app:layout_constraintTop_toTopOf="@+id/separator"
+        tools:text="Location : Cairo, Egypt" />
+
+
+    <TextView
+        android:id="@+id/userDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_unique_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_picture"
+        tools:text="A multipotentialite ENFP person seeking for perfection, Trying to find a link between my interests." />
+
+    <ImageView
+        android:id="@+id/facebook"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/userDescription"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/facebook"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userDescription" />
+
+    <ImageView
+        android:id="@+id/twitter"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/userDescription"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="7dp"
+        android:layout_toRightOf="@id/facebook"
+        android:src="@drawable/twitter"
+        app:layout_constraintBottom_toBottomOf="@+id/instagram"
+        app:layout_constraintStart_toEndOf="@+id/instagram"
+        app:layout_constraintTop_toTopOf="@+id/instagram" />
+
+
+    <ImageView
+        android:id="@+id/instagram"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/userDescription"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="7dp"
+
+        android:layout_toRightOf="@id/twitter"
+        android:src="@drawable/instagram"
+        app:layout_constraintBottom_toBottomOf="@+id/facebook"
+        app:layout_constraintStart_toEndOf="@+id/facebook"
+        app:layout_constraintTop_toTopOf="@+id/facebook" />
+
+    <ImageView
+        android:id="@+id/more"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/userDescription"
+        android:layout_alignParentBottom="true"
+
+        android:layout_marginStart="7dp"
+        android:layout_toRightOf="@id/instagram"
+        android:src="@drawable/more"
+        app:layout_constraintBottom_toBottomOf="@+id/twitter"
+        app:layout_constraintStart_toEndOf="@+id/twitter"
+        app:layout_constraintTop_toTopOf="@+id/twitter" />
+
+    <TextView
+        android:id="@+id/followers_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userDescription"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="42dp"
+        android:layout_toLeftOf="@id/followers"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/more"
+        app:layout_constraintStart_toEndOf="@+id/more"
+        app:layout_constraintTop_toTopOf="@+id/more"
+        tools:text="2.7K " />
+
+    <TextView
+        android:id="@+id/followers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userDescription"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/following_numbers"
+        android:text="Followers "
+        android:textColor="#6b6b6b"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/followers_number"
+        app:layout_constraintStart_toEndOf="@+id/followers_number"
+        app:layout_constraintTop_toTopOf="@+id/followers_number" />
+
+    <TextView
+        android:id="@+id/following_numbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userDescription"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="12dp"
+        android:layout_toLeftOf="@id/following"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/followers"
+        app:layout_constraintStart_toEndOf="@+id/followers"
+        app:layout_constraintTop_toTopOf="@+id/followers"
+        tools:text="2.7K " />
+
+    <TextView
+        android:id="@+id/following"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userDescription"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:text="Following"
+        android:textColor="#6b6b6b"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/following_numbers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/following_numbers"
+        app:layout_constraintTop_toTopOf="@+id/following_numbers" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/follow_btn_selector"
+        android:fontFamily="@font/sfuidisplay_medium"
+        android:text="@string/follow"
+        android:textAllCaps="false"
+        android:textColor="#4dcdc4"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/userName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/userName" />
+
+
+</android.support.constraint.ConstraintLayout>

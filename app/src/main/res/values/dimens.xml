@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="add_new_group_card_rad">15dp</dimen>
+    <dimen name="radius_button">20sp</dimen>
+    <dimen name="image_hight">150dp</dimen>
+    <dimen name="placeholder_text_height">8dp</dimen>
+    <dimen name="placeholder_image">50dp</dimen>
+    <dimen name="activity_padding">16dp</dimen>
+</resources>

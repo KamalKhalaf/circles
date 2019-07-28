@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF6B6B</color>
+    <color name="colorPrimaryDark">#4DCDC4</color>
+    <color name="main_color">#12E6D4</color>
+    <color name="colorAccent">#C7F464</color>
+    <color name="white">#ffffff</color>
+    <color name="white_back">#E9EDF0</color>
+    <color name="black">#000000</color>
+    <color name="black_trans">#50000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="black_transparent_40">#66000000</color>
+    <color name="textColorCreatEvent">#ff6b6b</color>
+    <color name="textColorCreatEventBtn">#4dcdc4</color>
+    <color name="edit_text_stroke_color">#66000000</color>
+    <color name="event_color_bg">#c7f464</color>
+    <color name="event_color_bgg">#40F00F</color>
+    <color name="private_group_color">#ff6b6b</color>
+    <color name="public_group_color">#4dcdc4</color>
+    <color name="gray">#E0D7D7</color>
+    <color name="group_dialog_tv_color">#575757</color>
+    <color name="red_seekbar_thumb">#ff6b6b</color>
+    <color name="txt_hint">#D3D3D3</color>
+    <color name="salmon">#ff6b6b</color>
+    <color name="blue_cancel_chooses_chat">#ff007aff</color>
+    <color name="dimmed">#55aeb2b6</color>
+    <color name="mute_backg">#f7f7f7</color>
+    <color name="white_transparent">#f2f7f7f7</color>
+    <color name="blue_10_tans">#02007aff</color>
+    <color name="black_trans_dark">#ac8b8b8b</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <color name="imagebackground">#fff</color>
+    <color name="green">#6fbf46</color>
+    <color name="graaaay">#f2f3f5</color>
+    <color name="graaaay2">#C2BFBF</color>
+    <color name="semi_background">#F0F0F0</color>
+    <color name="placeholder_bg">#dddddd</color>
+
+</resources>

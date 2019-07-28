@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bitmap" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SplashScreen">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="180dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="60dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo" />
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_user"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                app:cardElevation="2dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp">
+
+
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/avatar"
+                    android:drawablePadding="16dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHighlight="#D3D3D3"
+                    android:textColorHint="#D3D3D3"
+
+                    android:textSize="14sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/input_password"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="3"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/locked"
+                        android:drawablePadding="16dp"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColorHighlight="#D3D3D3"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/check_password"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:button="@drawable/password_selector"
+                        android:gravity="center" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+                android:id="@+id/btnServerLogin"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minWidth="140dp"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:background="@drawable/bg_button"
+                app:finalCornerAngle="50dp"
+                android:layout_gravity="center"
+                app:initialCornerAngle="0dp"
+                app:spinning_bar_color="@android:color/white"
+                app:spinning_bar_padding="8dp"
+                app:spinning_bar_width="4dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="start"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/forgot_password"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="start"
+                    android:minWidth="70dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/forgot_password"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+
+                <TextView
+                    android:id="@+id/reset_password"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="start"
+                    android:minWidth="70dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/reset_password"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:visibility="gone"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#323232">
+
+                </View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="  OR LOGIN WITH  "
+                    android:textColor="@color/black" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#323232">
+
+                </View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/outer_facebook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    card_view:cardBackgroundColor="@android:color/transparent"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:cardElevation="0dp">
+
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/facebook_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        card_view:cardBackgroundColor="#3b5998"
+                        card_view:cardCornerRadius="26dp"
+                        card_view:cardElevation="0dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="Facebook"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/outer_google"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    card_view:cardBackgroundColor="@android:color/transparent"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:cardElevation="0dp">
+
+
+                    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/google_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_gravity="center"
+
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        card_view:cardBackgroundColor="#ea4335"
+                        card_view:cardCornerRadius="26dp"
+                        card_view:cardElevation="0dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:text="Gmail"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+                    </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/signup_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:clickable="true"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal"
+                android:text="@string/dont_have_acc_sign_up"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                tools:ignore="OnClick" />
+        </LinearLayout>
+
+
+    </ScrollView>
+</FrameLayout>

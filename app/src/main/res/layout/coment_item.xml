@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="2dp"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageProfil"
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/sign_up_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageProfil"
+                app:layout_constraintEnd_toStartOf="@+id/commentCount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageProfil"
+                app:layout_constraintTop_toTopOf="@+id/imageProfil"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="khaijbjb hih i hi hih ihhhhkhkhh hhh hhh  hhry " />
+
+            <TextView
+                android:id="@+id/timeAgoTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+              android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="@+id/name"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:text="20 min ago" />
+
+            <TextView
+                android:id="@+id/commentCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/repliesImg"
+                app:layout_constraintEnd_toStartOf="@+id/repliesImg"
+                app:layout_constraintTop_toTopOf="@+id/repliesImg"
+                app:layout_constraintVertical_bias="0.51"
+                tools:text="4" />
+
+            <ImageView
+                android:id="@+id/repliesImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/likesCountTv"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/comments" />
+
+            <TextView
+                android:id="@+id/likesCountTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                app:layout_constraintEnd_toStartOf="@+id/imageView7"
+                app:layout_constraintTop_toTopOf="@+id/imageView7"
+                app:layout_constraintVertical_bias="0.666"
+                tools:text="20" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/like" />
+
+            <SeekBar
+                android:id="@+id/seekBar2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginBottom="8dp"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/custom_thumb"
+                app:layout_constraintBottom_toBottomOf="@+id/play_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/play_btn"
+                app:layout_constraintTop_toBottomOf="@+id/timeAgoTv" />
+
+            <TextView
+                android:id="@+id/recodStartTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:text="1:0"
+                app:layout_constraintStart_toStartOf="@+id/seekBar2"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+
+            <TextView
+                android:id="@+id/recordEndTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:text="5:23"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/seekBar2"
+                app:layout_constraintTop_toBottomOf="@+id/seekBar2" />
+
+
+            <TextView
+                android:id="@+id/commentText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recodStartTv"
+                tools:text="hkldnkdsk jbdwfklnkds odsbfibsdnk kdslbvksdn v isdovbidsvk odsvhbdsnv idshfdisk " />
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/postImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:visibility="gone"
+                android:background="#f2f3f5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/commentText"
+                android:foreground="?android:attr/selectableItemBackground"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:background="@drawable/round_outline"
+                        android:scaleType="fitXY"
+                        android:id="@+id/commentImage"
+                        tools:srcCompat="@tools:sample/avatars"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+
+                    <ProgressBar
+                        android:id="@+id/progressBarload"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <ImageView
+                android:id="@+id/play_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeAgoTv"
+                app:srcCompat="@drawable/ic_play_recorded_audio" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:visibility="invisible"
+                android:background="@color/black_trans"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/postImage" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</layout>

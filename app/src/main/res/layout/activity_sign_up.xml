@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/content"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bitmap" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/circles_text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="Sign Up"
+                android:textColor="@color/colorPrimary"
+                android:textSize="28sp" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="40dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="bottom|end"
+                    app:cardCornerRadius="12dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimaryDark"
+                        android:src="@drawable/ic_add" />
+                </android.support.v7.widget.CardView>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/uplad_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@color/colorPrimary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/parent" />
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_user_firstname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+
+                <EditText
+                    android:id="@+id/input_user_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/avatar"
+                    android:drawablePadding="16dp"
+                    android:hint="First name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHighlight="#D3D3D3"
+                    android:textColorHint="#D3D3D3"
+                    android:textSize="14sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_user_lastname"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+
+                <EditText
+                    android:id="@+id/input_user_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/avatar"
+                    android:drawablePadding="16dp"
+                    android:hint="Last name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHighlight="#D3D3D3"
+                    android:textColorHint="#D3D3D3"
+                    android:textSize="14sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_user_name_unique"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+
+                <EditText
+                    android:id="@+id/input_user_name_unique"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/user_name_icon"
+                    android:drawablePadding="16dp"
+                    android:hint="user name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHighlight="#D3D3D3"
+                    android:textColorHint="#D3D3D3"
+                    android:textSize="14sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+
+                <EditText
+                    android:id="@+id/input_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:drawableLeft="@drawable/mail"
+                    android:drawablePadding="16dp"
+                    android:hint="E-mail"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHighlight="#D3D3D3"
+                    android:textColorHint="#D3D3D3"
+                    android:textSize="14sp" />
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:visibility="visible"
+                android:id="@+id/layoutGender"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/male"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardCornerRadius="26dp"
+                    card_view:cardElevation="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_male"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:background="@drawable/male"
+                            android:button="@android:color/transparent"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/maleTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:text="Male"
+                            android:textColor="#D3D3D3"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/female"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardCornerRadius="26dp"
+                    card_view:cardElevation="2dp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_female"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_margin="16dp"
+                            android:background="@drawable/female"
+                            android:button="@android:color/transparent" />
+
+                        <TextView
+                            android:id="@+id/femaleTV"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:text="Female"
+                            android:textColor="#D3D3D3"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="22dp"
+                android:visibility="gone"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/country"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardCornerRadius="26dp"
+                    card_view:cardElevation="2dp">
+
+
+                    <EditText
+                        android:id="@+id/input_country"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="16dp"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/flag"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="Country"
+                        android:inputType="textCapWords"
+                        android:textColorHighlight="#D3D3D3"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="14sp" />
+
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/city"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardCornerRadius="26dp"
+                    card_view:cardElevation="2dp">
+
+
+                    <EditText
+                        android:id="@+id/input_city"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="16dp"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/houses"
+                        android:drawablePadding="16dp"
+                        android:gravity="center_vertical"
+                        android:hint="City"
+                        android:inputType="textCapWords"
+                        android:textColorHighlight="#D3D3D3"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="14sp" />
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_phone"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:visibility="gone"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="12dp"
+                    android:id="@+id/phoneDrawableLeft"
+                    android:src="@drawable/phone" />
+
+                <com.circles.circlesapp.helpers.ui.PrefixedEditText
+                    android:id="@+id/input_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@null"
+                    android:hint="Phone number"
+                    android:inputType="phone"
+                    android:layout_marginStart="25dp"
+                    android:textColorHighlight="#D3D3D3"
+                    android:textColorHint="#D3D3D3"
+                    android:textSize="14sp" />
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_birth"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+
+                <EditText
+                    android:id="@+id/input_birth"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="@null"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/calendar"
+                    android:drawablePadding="16dp"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="Birthday"
+                    android:inputType="date"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:textColorHighlight="#D3D3D3"
+                    android:textColorHint="#D3D3D3"
+                    android:textSize="14sp" />
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/input_password"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="3"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/locked"
+                        android:drawablePadding="16dp"
+                        android:hint="password"
+                        android:inputType="textPassword"
+                        android:textColorHighlight="#D3D3D3"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/check_password"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:button="@drawable/password_selector"
+                        android:gravity="center" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_retype_password"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="22dp"
+
+                android:layout_marginEnd="24dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/input_retype_password"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="3"
+                        android:background="@null"
+                        android:drawableLeft="@drawable/locked"
+                        android:drawablePadding="16dp"
+                        android:hint="Retype password"
+                        android:inputType="textPassword"
+                        android:textColorHighlight="#D3D3D3"
+                        android:textColorHint="#D3D3D3"
+                        android:textSize="14sp" />
+
+                    <CheckBox
+                        android:id="@+id/check_retype_password"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.5"
+                        android:button="@drawable/password_selector"
+                        android:gravity="center" />
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/terms_concitions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp"
+                    android:button="@drawable/terms_and_condition_selector"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Confirm our "
+                    android:textColor="#000000"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/terms_condition"
+                    android:textColor="#ff6b6b"
+                    android:textSize="14sp"
+                    tools:ignore="OnClick" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/cardview_signup"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardBackgroundColor="@color/colorPrimaryDark"
+                card_view:cardCornerRadius="26dp"
+                card_view:cardElevation="2dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#323232">
+
+                </View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="  OR SIGN UP WITH  "
+                    android:textColor="@color/black" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#323232">
+
+                </View>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+
+                android:layout_marginBottom="32dp"
+                android:orientation="horizontal">
+
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/facebook_in"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardBackgroundColor="#3b5998"
+                    card_view:cardCornerRadius="26dp"
+                    card_view:cardElevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="Facebook"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/google_in"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardBackgroundColor="#ea4335"
+                    card_view:cardCornerRadius="26dp"
+                    card_view:cardElevation="2dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@android:color/transparent"
+                        android:gravity="center"
+                        android:text="Gmail"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</FrameLayout>

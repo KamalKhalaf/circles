@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_marginStart="15dp"
+            android:id="@+id/back"
+            android:padding="7dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/back" />
+
+        <android.support.v7.widget.SearchView
+            android:padding="2dp"
+            android:background="@drawable/search_shape"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:id="@+id/search_view"
+            style="@style/MySearchViewStyle"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="38dp"
+            android:textSize="14sp"
+            android:focusable="false"
+            app:iconifiedByDefault="false"
+            app:queryHint="@string/search_for_friends_or_events"/>
+
+        <ImageView
+            android:id="@+id/notifications"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="0.5"
+            android:src="@drawable/notifications_bell_button" />
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/search_nav_host"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:navGraph="@navigation/search_nav_graph" />
+
+</android.support.constraint.ConstraintLayout>
+</layout>

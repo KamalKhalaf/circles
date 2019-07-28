@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_graph"
+    app:startDestination="@id/settingsFragment">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.circles.circlesapp.settings.ui.SettingsFragment"
+        android:label="settings_layout"
+        tools:layout="@layout/settings_layout" >
+        <action
+            android:id="@+id/action_settingsFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_socialAccountsFragment"
+            app:destination="@id/socialAccountsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.circles.circlesapp.settings.ui.EditProfileFragment"
+        android:label="edit_profile_layout"
+        tools:layout="@layout/edit_profile_layout" >
+        <argument
+            android:name="UserModel"
+            app:argType="reference" />
+    </fragment>
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.circles.circlesapp.settings.ui.PrivacyFragment"
+        android:label="privacy_layout"
+        tools:layout="@layout/privacy_layout" />
+    <fragment
+        android:id="@+id/socialAccountsFragment"
+        android:name="com.circles.circlesapp.settings.ui.SocialAccountsFragment"
+        android:label="social_media_layout"
+        tools:layout="@layout/social_media_layout" />
+</navigation>

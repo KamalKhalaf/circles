@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+     <import type="android.view.View"/>
+        <variable
+            name="privacy"
+            type="com.circles.circlesapp.settings.viewModels.privacy.PrivacyViewModel"/>
+    </data>
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#4dcdc4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:onClick="@{(v) ->privacy.back(v)}"
+            android:padding="3dp"
+            android:id="@+id/back_img"
+            android:layout_width="17dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:gravity="center_horizontal"
+            android:letterSpacing="-0.02"
+            android:lineSpacingExtra="11sp"
+            android:text="Privacy"
+            android:textColor="#ffffff"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:fontFamily="@font/sfuidisplay_bold"
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:letterSpacing="-0.04"
+        android:lineSpacingExtra="13sp"
+        android:text="Select What You want to users See"
+        android:textColor="@color/salmon"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <ImageView
+        android:onClick="@{(v) ->privacy.age_location(v)}"
+        android:id="@+id/age"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="26dp"
+        android:src="@{privacy.privacyModel.age_location_privacy?@drawable/ic_circle_selected:@drawable/ic_circle}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <ImageView
+        android:onClick="@{(v) ->privacy.following(v)}"
+        android:id="@+id/follow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:src="@{privacy.privacyModel.following_followers_privacy?@drawable/ic_circle_selected:@drawable/ic_circle}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/privte_account"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="18dp"
+        android:onClick="@{(v) ->privacy.privateAccount(v)}"
+        android:src="@{privacy.privacyModel.profile_privacy?@drawable/ic_circle_selected:@drawable/ic_circle}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+    <TextView
+        android:fontFamily="@font/sfuidisplay_medium"
+        android:onClick="@{(v) ->privacy.age_location(v)}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:letterSpacing="-0.04"
+        android:lineSpacingExtra="15sp"
+        android:textColor="#575757"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/age"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/age"
+        app:layout_constraintTop_toTopOf="@+id/age"
+        android:text="Age - Location" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="18dp"
+        android:background="#d4d4d4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/age" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="18dp"
+        android:background="#d4d4d4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+    <TextView
+        android:fontFamily="@font/sfuidisplay_medium"
+        android:onClick="@{(v) ->privacy.following(v)}"
+        android:id="@+id/textView18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:letterSpacing="-0.04"
+        android:lineSpacingExtra="15sp"
+        android:textColor="#575757"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/follow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/follow"
+        app:layout_constraintTop_toTopOf="@+id/follow"
+        android:text="Following - Followers" />
+
+    <TextView
+        android:fontFamily="@font/sfuidisplay_medium"
+        android:onClick="@{(v) ->privacy.privateAccount(v)}"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:letterSpacing="-0.04"
+        android:lineSpacingExtra="15sp"
+        android:text="Private Account"
+        android:textColor="#575757"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/privte_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/privte_account"
+        app:layout_constraintTop_toTopOf="@+id/privte_account" />
+
+    <Button
+        android:textAllCaps="false"
+        android:onClick="@{(v) ->privacy.confirmChanges(v)}"
+        android:textColor="@color/white"
+        android:background="@drawable/confirm_btn_selector"
+        android:id="@+id/button7"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginBottom="40dp"
+        android:textSize="18sp"
+        android:fontFamily="@font/helveticaneue_roman"
+        android:text="Confirm Changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privte_account"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</android.support.constraint.ConstraintLayout>
+</layout>

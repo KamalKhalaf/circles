@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="qrScan"
+            type="com.circles.circlesapp.settings.viewModels.qr.QrViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="440dp"
+        android:background="@color/transparent">
+
+        <FrameLayout
+            android:id="@+id/cardView7"
+            android:layout_width="match_parent"
+            android:layout_height="346dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="45dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="346dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                app:cardCornerRadius="10dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="62dp"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text='@{qrScan.userName}'
+                        android:textColor="#575757"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="\ufeff@bghamdi" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_horizontal"
+                        android:letterSpacing="-0.02"
+                        android:lineSpacingExtra="9sp"
+                        tools:text="Badrs&apos; QR Code"
+                        android:text='@{qrScan.qrTitle}'
+                        android:textColor="@color/salmon"
+                        android:textSize="24sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView20"
+                    />
+
+                    <ImageView
+                        android:id="@+id/qr_img"
+                        android:layout_width="170dp"
+                        android:layout_height="170dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="11dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="42dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView21"
+                        app:srcCompat="@drawable/qr" />
+
+                    <ImageView
+                        android:id="@+id/close"
+                        android:layout_width="23dp"
+                        android:layout_height="23dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:onClick="@{(v) ->qrScan.close(v)}"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ic_close"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginLeft="34dp"
+            android:layout_marginEnd="34dp"
+            android:layout_marginRight="34dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/scan_btn_selector"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:onClick="@{(v) ->qrScan.scan(v)}"
+            android:text="@string/scan_an_user_qr_code"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardView7"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cardView7" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cancel"
+            loadIMG="@{qrScan.profile_image}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView7"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="@+id/cardView7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

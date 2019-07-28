@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="memberItem"
+            type="com.circles.circlesapp.group.groupMember.MemberItem" />
+    </data>
+<android.support.constraint.ConstraintLayout
+
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/circleImageView"
+        loadIMG="@{memberItem.memberImg}"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/sign_up_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="2dp"
+        android:lineSpacingExtra="7sp"
+        android:textColor="#575757"
+        android:text="@{memberItem.memberName}"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/circleImageView"
+        app:layout_constraintTop_toTopOf="@+id/circleImageView"
+        tools:text="Selena Gommz" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:lineSpacingExtra="11sp"
+        android:textColor="#575757"
+        android:textSize="12sp"
+        android:text="@{memberItem.city}"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        tools:text="Shikh Zayed City" />
+
+    <ImageView
+        android:id="@+id/mute_unmuteImg"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/mute"
+        app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+</android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/main_const"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_transparent_40">
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/white_transparent"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toTopOf="@+id/cardView_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:id="@+id/main_chhoses_constraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/sendFilesTv"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:text="Send Files"
+                        android:textColor="@color/blue_cancel_chooses_chat"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+                    <TextView
+                        android:id="@+id/createAPollTv"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:fontFamily="@font/sfuidisplay_medium"
+
+                        android:text="Create a Poll"
+                        android:textColor="@color/blue_cancel_chooses_chat"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                    <View
+                        android:id="@+id/view2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/createAPollTv" />
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="0dp"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="2dp"
+                        android:background="@color/gray"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sendImgOrVideoTv" />
+
+                    <TextView
+                        android:id="@+id/sendImgOrVideoTv"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        android:text="Send Image/Video"
+                        android:textColor="@color/blue_cancel_chooses_chat"
+                        android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardView_cancel"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="80dp"
+                app:cardCornerRadius="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Cancel"
+                    android:fontFamily="@font/sfuidisplay_medium"
+                    android:textColor="@color/blue_cancel_chooses_chat"
+                    android:textSize="20sp" />
+            </android.support.v7.widget.CardView>
+        </android.support.constraint.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/fragPoll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+</layout>

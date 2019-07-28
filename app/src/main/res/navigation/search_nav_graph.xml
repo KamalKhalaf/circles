@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_nav_graph"
+    app:startDestination="@id/userProfileFragment">
+
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.circles.circlesapp.profile.UserProfileFragment"
+        android:label="user_profile_layout"
+        tools:layout="@layout/user_profile_layout" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.circles.circlesapp.search.SearchFragment"
+        android:label="search_result_layout"
+        tools:layout="@layout/search_result_layout" >
+        <argument
+            android:name="SearchQuery"
+            app:argType="string" />
+    </fragment>
+</navigation>

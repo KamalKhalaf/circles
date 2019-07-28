@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="socialMedia"
+            type="com.circles.circlesapp.settings.socialMedia.SocialMediaViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/connect_btn_selector"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:onClick="@{() ->socialMedia.connectTwitter()}"
+            android:text="Connect"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(2)==null?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+            app:layout_constraintStart_toEndOf="@+id/imageView25"
+            app:layout_constraintTop_toTopOf="@+id/imageView25" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/connect_btn_selector"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:onClick="@{() ->socialMedia.connectSnap()}"
+            android:text="Connect"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(3)==null?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+            app:layout_constraintStart_toEndOf="@+id/imageView28"
+            app:layout_constraintTop_toTopOf="@+id/imageView28" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/connect_btn_selector"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:onClick="@{() ->socialMedia.connectLinked()}"
+            android:text="Connect"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(4)==null?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView31"
+            app:layout_constraintStart_toEndOf="@+id/imageView31"
+            app:layout_constraintTop_toTopOf="@+id/imageView31" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:background="#4dcdc4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/back_img"
+                android:layout_width="17dp"
+                android:layout_height="26dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:onClick="@{() ->socialMedia.back()}"
+                android:padding="3dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/sfuidisplay_medium"
+                android:gravity="center_horizontal"
+                android:letterSpacing="-0.02"
+                android:lineSpacingExtra="11sp"
+                android:text="Social Media Accounts"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="@+id/back_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/back_img" />
+        </android.support.constraint.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:fontFamily="@font/sfuidisplay_bold"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="13sp"
+            android:text="Select What You want to users See"
+            android:textColor="#ff6b6b"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_facebook_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <EditText
+            android:id="@+id/textView11"
+            editWatcher="@{socialMedia.faceBookWatcher}"
+            setError="@{socialMedia.errors.get(0)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
+            android:cursorVisible="@{socialMedia.editAccounts.get(0)}"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:hint="Your FaceBook Account"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="17sp"
+            android:text="@{socialMedia.mediaAccounts.get(0)}"
+            android:textColor="#575757"
+            android:textSize="14sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(0)==null?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toStartOf="@+id/imageView18"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11"
+            tools:text="www.facebook.com/mohebelzeftawy" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() ->socialMedia.editFaceBook()}"
+            android:src="@drawable/ic_edit_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView18" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="@{() ->socialMedia.deleteFaceBook()}"
+            android:src="@drawable/ic_delete_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintEnd_toStartOf="@+id/imageView17"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+        <View
+            android:id="@+id/view12"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:background="#d4d4d4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+        <Button
+            android:id="@+id/faceBook"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/connect_btn_selector"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:onClick="@{() ->socialMedia.connectFaceBook()}"
+            android:text="Connect"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(0)==null?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintStart_toEndOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/instgram"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view12" />
+
+        <EditText
+            android:id="@+id/textView12"
+            editWatcher="@{socialMedia.instaWatcher}"
+            setError="@{socialMedia.errors.get(1)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
+            android:cursorVisible="@{socialMedia.editAccounts.get(1)}"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:hint="Your Instgram Account"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="17sp"
+            android:text="@{socialMedia.mediaAccounts.get(1)}"
+            android:textColor="#575757"
+            android:textSize="14sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(1)==null?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+            app:layout_constraintEnd_toStartOf="@+id/imageView20"
+            app:layout_constraintStart_toEndOf="@+id/imageView12"
+            app:layout_constraintTop_toTopOf="@+id/imageView12"
+            tools:text="\@mohebelzeftawy" />
+
+        <EditText
+            android:id="@+id/textView15"
+            editWatcher="@{socialMedia.snapWatcher}"
+            setError="@{socialMedia.errors.get(3)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
+            android:cursorVisible="@{socialMedia.editAccounts.get(3)}"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:hint="Your Snap Chat Account"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="17sp"
+            android:text="@{socialMedia.mediaAccounts.get(3)}"
+            android:textColor="#575757"
+            android:textSize="14sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(3)==null?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+            app:layout_constraintEnd_toStartOf="@+id/imageView29"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/imageView28"
+            app:layout_constraintTop_toTopOf="@+id/imageView28"
+            tools:text="\@mohebelzeftawy" />
+
+        <EditText
+            android:id="@+id/textView16"
+            editWatcher="@{socialMedia.linkedWatcher}"
+            setError="@{socialMedia.errors.get(4)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
+            android:cursorVisible="@{socialMedia.editAccounts.get(4)}"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:hint="Your LinkedIn Account"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="17sp"
+            android:text="@{socialMedia.mediaAccounts.get(4)}"
+            android:textColor="#575757"
+            android:textSize="14sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(4)==null?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView31"
+            app:layout_constraintEnd_toStartOf="@+id/imageView32"
+            app:layout_constraintStart_toEndOf="@+id/imageView31"
+            app:layout_constraintTop_toTopOf="@+id/imageView31"
+            tools:text="\@mohebelzeftawy" />
+
+        <EditText
+            android:id="@+id/textView17"
+            editWatcher="@{socialMedia.youTubeWatcher}"
+            setError="@{socialMedia.errors.get(5)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/transparent"
+            android:cursorVisible="@{socialMedia.editAccounts.get(5)}"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:hint="Your YouTube Account"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="17sp"
+            android:text="@{socialMedia.mediaAccounts.get(5)}"
+            android:textColor="#575757"
+            android:textSize="14sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(5)==null?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView34"
+            app:layout_constraintEnd_toStartOf="@+id/imageView35"
+            app:layout_constraintStart_toEndOf="@+id/imageView34"
+            app:layout_constraintTop_toTopOf="@+id/imageView34"
+            tools:text="\@mohebelzeftawy" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/connect_btn_selector"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:onClick="@{() ->socialMedia.connectYouTube()}"
+            android:text="Connect"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(5)==null?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView34"
+            app:layout_constraintStart_toEndOf="@+id/imageView34"
+            app:layout_constraintTop_toTopOf="@+id/imageView34" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() ->socialMedia.editInsta()}"
+            android:src="@drawable/ic_edit_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView20"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="@{() ->socialMedia.deleteInsta()}"
+            android:src="@drawable/ic_delete_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/textView12"
+            app:layout_constraintEnd_toStartOf="@+id/imageView19"
+            app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#d4d4d4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:background="@drawable/connect_btn_selector"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:onClick="@{() ->socialMedia.connectInsta()}"
+            android:text="Connect"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(1)==null?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+            app:layout_constraintStart_toEndOf="@+id/imageView12"
+            app:layout_constraintTop_toTopOf="@+id/imageView12" />
+
+        <ImageView
+            android:id="@+id/imageView25"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_tewetter_con"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <EditText
+            android:id="@+id/textView14"
+            editWatcher="@{socialMedia.twitterWatcher}"
+            setError="@{socialMedia.errors.get(2)}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginEnd="8dp"
+            android:background="@color/transparent"
+            android:cursorVisible="@{socialMedia.editAccounts.get(2)}"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:hint="Your Twitter Account"
+            android:letterSpacing="-0.04"
+            android:lineSpacingExtra="17sp"
+            android:text="@{socialMedia.mediaAccounts.get(2)}"
+            android:textColor="#575757"
+            android:textSize="14sp"
+            android:visibility="@{socialMedia.mediaAccounts.get(2)==null?View.GONE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+            app:layout_constraintEnd_toStartOf="@+id/imageView26"
+            app:layout_constraintStart_toEndOf="@+id/imageView25"
+            app:layout_constraintTop_toTopOf="@+id/imageView25"
+            tools:text="\ufeff@mohebelzeftawy" />
+
+        <ImageView
+            android:id="@+id/imageView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="@{() ->socialMedia.deleteTwitter()}"
+            android:src="@drawable/ic_delete_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+            app:layout_constraintEnd_toStartOf="@+id/imageView27"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        <ImageView
+            android:id="@+id/imageView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="@{() ->socialMedia.deleteSnap()}"
+            android:src="@drawable/ic_delete_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/textView15"
+            app:layout_constraintEnd_toStartOf="@+id/imageView30"
+            app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+        <ImageView
+            android:id="@+id/imageView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="@{() ->socialMedia.deleteLinked()}"
+            android:src="@drawable/ic_delete_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/textView16"
+            app:layout_constraintEnd_toStartOf="@+id/imageView33"
+            app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+        <ImageView
+            android:id="@+id/imageView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:onClick="@{() ->socialMedia.deleteYouTube()}"
+            android:src="@drawable/ic_delete_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/textView17"
+            app:layout_constraintEnd_toStartOf="@+id/imageView36"
+            app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+        <ImageView
+            android:id="@+id/imageView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() ->socialMedia.editTwitter()}"
+            android:src="@drawable/ic_edit_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView26"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView26" />
+
+        <ImageView
+            android:id="@+id/imageView30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() ->socialMedia.editSnap()}"
+            android:src="@drawable/ic_edit_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView29"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView29" />
+
+        <ImageView
+            android:id="@+id/imageView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() ->socialMedia.editLinked()}"
+            android:src="@drawable/ic_edit_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView32"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView32" />
+
+        <ImageView
+            android:id="@+id/imageView36"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:onClick="@{() ->socialMedia.editYouTube()}"
+            android:src="@drawable/ic_edit_socail"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView35"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView35" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#d4d4d4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#d4d4d4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView28" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="#d4d4d4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView31" />
+
+        <ImageView
+            android:id="@+id/imageView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_snap_chat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <ImageView
+            android:id="@+id/imageView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_linked_in"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+        <ImageView
+            android:id="@+id/imageView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_youtube"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/scan_btn_selector"
+            android:fontFamily="@font/helveticaneue_roman"
+            android:onClick="@{() ->socialMedia.confirmChange()}"
+            android:text="Confirm Changes"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView34"
+            app:layout_constraintVertical_bias="0.9" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

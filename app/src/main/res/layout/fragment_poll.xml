@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/transparent">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/mainCard"
+            android:layout_width="0dp"
+            android:layout_height="450dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="@dimen/add_new_group_card_rad"
+            app:cardElevation="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/closeIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/com_facebook_close" />
+
+                    <TextView
+                        android:id="@+id/titleTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/sfuidisplay_medium"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:text="Create a Poll"
+                        android:textColor="@color/textColorCreatEvent"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/closeIcon" />
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardView2"
+                        android:layout_width="0dp"
+                        android:layout_height="119dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginEnd="8dp"
+
+                        app:cardCornerRadius="@dimen/add_new_group_card_rad"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.52"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/attachImage2">
+
+                        <EditText
+                            android:id="@+id/descEt"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_edit_text_normal"
+                            android:ems="10"
+                            android:gravity="start"
+                            android:hint="Add comment(optional)"
+                            android:inputType="text|textMultiLine"
+                            android:minLines="3"
+                            android:padding="5dp"
+                            android:textSize="16sp" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/attachImage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        app:cardCornerRadius="@dimen/add_new_group_card_rad"
+                        app:cardElevation="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.51"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/titleTv">
+
+                        <TextView
+                            android:id="@+id/attachTv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:text="Attach Poll image 1" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:srcCompat="@drawable/attach" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/attachImage2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        app:cardCornerRadius="@dimen/add_new_group_card_rad"
+                        app:cardElevation="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.51"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/attachImage">
+
+                        <TextView
+                            android:id="@+id/attachTv2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:text="Attach Poll image 2" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            app:srcCompat="@drawable/attach" />
+                    </android.support.v7.widget.CardView>
+
+                    <ImageView
+                        android:id="@+id/imagePoll1"
+                        android:layout_width="120dp"
+                        android:visibility="gone"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginBottom="32dp"
+                        android:src="@color/colorPrimary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/imagePoll2"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+                    <ImageView
+                        android:id="@+id/imagePoll2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="32dp"
+                        android:src="@color/colorPrimary"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/imagePoll1"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+                </android.support.constraint.ConstraintLayout>
+            </ScrollView>
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/createBtn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginEnd="70dp"
+            android:fontFamily="@font/sfuidisplay_medium"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/confirm_pinned_loc"
+            android:text="@string/create_poll"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/mainCard"
+            app:layout_constraintEnd_toEndOf="@+id/mainCard"
+            app:layout_constraintStart_toStartOf="@+id/mainCard"
+            app:layout_constraintTop_toBottomOf="@id/mainCard"
+            app:layout_constraintVertical_bias="0.041" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

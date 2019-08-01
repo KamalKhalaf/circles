@@ -37,7 +37,7 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
-        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.activity_login)
         if (SharedPrefHelper().getUserEmail(this) != null && SharedPrefHelper().getUserPassword(this) != null) {
             LoginFromSharedPref(SharedPrefHelper().getUserEmail(this), SharedPrefHelper().getUserPassword(this))

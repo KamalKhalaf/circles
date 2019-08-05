@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
     public static final String BASE_URL =
-            "http://ec2-18-216-242-74.us-east-2.compute.amazonaws.com/circles/public/api/auth/";
+            "http://ec2-18-216-242-74.us-east-2.compute.amazonaws.com/new_circles/public/";
 
     private static RetrofitClient mInstance;
     private Retrofit retrofit;

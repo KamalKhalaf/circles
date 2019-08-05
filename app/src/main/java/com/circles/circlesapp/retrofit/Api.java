@@ -6,6 +6,7 @@ import com.circles.circlesapp.chatlist.UserMessagesResModel;
 import com.circles.circlesapp.comments.PostCommentResponse;
 import com.circles.circlesapp.helpers.livedata.ApiResponse;
 import com.circles.circlesapp.home.NewsFeedResponse;
+import com.circles.circlesapp.loginsignup.CheckUserResponse;
 import com.circles.circlesapp.messaging.model.MessageDetailsResponse;
 import com.circles.circlesapp.messaging.model.SendMessageBody;
 import com.circles.circlesapp.messaging.model.SendMsgResponse;
@@ -39,11 +40,13 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Query;
 
 public interface Api {
 
@@ -230,6 +233,10 @@ public interface Api {
     @POST("sendMessage")
     @Headers("Accept: application/json")
     Call<SendMsgResponse> sendMessage3(@Header("Authorization") String auth, @Body SendMessageBody body);
+
+    @GET("checkUser")
+    @Headers("Accept: application/json")
+    Observable<ResponseApi<CheckUserResponse>> checkUserName(@Query("username") String name);
 
     @POST("joinGroup")
     @Headers("Accept: application/json")

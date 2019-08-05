@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/inc_toolbar"
+        layout="@layout/edit_profile_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_top"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation=".5dp"
+        app:contentPadding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inc_toolbar">
+
+        <ImageView
+            android:id="@+id/iv_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/green" />
+
+        <include
+            android:id="@+id/inc_top"
+            layout="@layout/layout_add_pic_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_bottom_left"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_bottom_right"
+        app:layout_constraintEnd_toEndOf="@+id/cv_med_left"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cv_med_left"
+        app:layout_constraintTop_toTopOf="@+id/cv_bottom_right"
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@tools:sample/avatars">
+
+        <ImageView
+            android:id="@+id/iv_bottom_left"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/green" />
+
+        <include
+            android:id="@+id/inc_bottom_left"
+
+            layout="@layout/layout_add_pic_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_med_right"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="52dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation=".5dp"
+        app:contentPadding="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_top"
+        tools:srcCompat="@tools:sample/avatars">
+
+        <ImageView
+            android:id="@+id/iv_med_right"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/green" />
+
+        <include
+            android:id="@+id/inc_med_right"
+
+            layout="@layout/layout_add_pic_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_bottom_right"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/cv_med_right"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cv_med_right"
+        app:layout_constraintTop_toBottomOf="@+id/cv_med_right"
+        tools:srcCompat="@tools:sample/avatars">
+
+        <ImageView
+            android:id="@+id/iv_bottom_right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/green" />
+
+        <include
+            android:id="@+id/inc_bottom_right"
+            layout="@layout/layout_add_pic_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_med_left"
+        android:layout_width="120dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="52dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_med_right"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cv_med_right"
+        tools:srcCompat="@tools:sample/avatars">
+
+        <ImageView
+            android:id="@+id/iv_med_left"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/green" />
+
+        <include
+            android:id="@+id/inc_med_left"
+            layout="@layout/layout_add_pic_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </android.support.v7.widget.CardView>
+
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/rounded_green"
+        android:text="Done"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cv_bottom_right" />
+
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_red"
+        android:text="skip"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_done" />
+
+</android.support.constraint.ConstraintLayout>

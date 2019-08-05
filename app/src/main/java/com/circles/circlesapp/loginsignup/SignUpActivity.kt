@@ -1,18 +1,13 @@
 package com.circles.circlesapp.loginsignup
 
-import android.app.DatePickerDialog
-import android.app.PendingIntent.getActivity
+import android.arch.lifecycle.MutableLiveData
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.CardView
 import android.text.Editable
 import android.text.TextWatcher
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
-import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.*
@@ -24,10 +19,11 @@ import com.circles.circlesapp.R
 import com.circles.circlesapp.helpers.SharedPrefHelper
 import com.circles.circlesapp.helpers.Utility
 import com.circles.circlesapp.helpers.base.BaseActivity
-import com.circles.circlesapp.helpers.ui.GenericTextWatcher
+import com.circles.circlesapp.isVisible
+import com.circles.circlesapp.makeGone
 import com.circles.circlesapp.retrofit.RetrofitClient
+import com.circles.circlesapp.show
 import com.mukesh.countrypicker.Country
-import com.mukesh.countrypicker.CountryPicker
 import com.mukesh.countrypicker.OnCountryPickerListener
 import com.vincent.filepicker.Constant
 import com.vincent.filepicker.activity.BaseActivity.IS_NEED_FOLDER_LIST
@@ -35,6 +31,7 @@ import com.vincent.filepicker.activity.ImagePickActivity
 import com.vincent.filepicker.activity.ImagePickActivity.IS_NEED_CAMERA
 import com.vincent.filepicker.filter.entity.ImageFile
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import kotlinx.android.synthetic.main.activity_signup_2.*
 import okhttp3.RequestBody
 import org.json.JSONObject
 import java.io.File
@@ -58,127 +55,54 @@ class SignUpActivity : BaseActivity(), OnCountryPickerListener {
     lateinit var upload_image: ImageView
     private var isGenderSelected: Boolean = false
     private var gender: Boolean = false
-    //    val sharedPref: MySharedPreferences? = MySharedPreferences(this)
+    private var selectedLanguage: String = "ar"
+    private var repo = LoginSignupRepo()
+    var checkUserNameML: MutableLiveData<Boolean> = MutableLiveData()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_sign_up)
+        setContentView(R.layout.activity_signup_2)
+        languageSelection()
+        watchUserNameEt()
         hideSoftKeyboardListener()
-        val builder = CountryPicker.Builder()
-        input_country.setOnClickListener {
-            builder.with(this).listener(this).build().showDialog(supportFragmentManager)
-        }
+    }
 
-        //card view gender selected
-        female.setOnClickListener {
-            radio_male.isSelected = false
-            radio_male.setBackgroundResource(R.drawable.male)
-            radio_female.setBackgroundResource(R.drawable.female_selected)
-            gender = false
-            isGenderSelected = true
-            femaleTV.setTextColor(Color.BLACK)
-
-            maleTV.setTextColor(Color.GRAY)
-
-        }
-        male.setOnClickListener {
-            radio_female.isSelected = false
-            radio_female.setBackgroundResource(R.drawable.female)
-            radio_male.setBackgroundResource(R.drawable.male_selected)
-            gender = true
-            isGenderSelected = true
-            maleTV.setTextColor(Color.BLACK)
-
-            femaleTV.setTextColor(Color.GRAY)
-        }
-        //
-
-        //show password
-        var checkbox = findViewById<View>(R.id.check_password) as CheckBox
-        checkbox.setOnCheckedChangeListener { _, isChecked ->
-            if (!isChecked) {
-                // show password
-                input_password.transformationMethod = PasswordTransformationMethod.getInstance()
-
-            } else {
-                // hide password
-                input_password.transformationMethod = HideReturnsTransformationMethod.getInstance()
-            }
-        }
-
-        upload_image = findViewById<View>(R.id.uplad_image) as ImageView
-        upload_image.setOnClickListener(View.OnClickListener {
-            openImagePicker()
-        })
-        var checkbox_retype = findViewById<View>(R.id.check_retype_password) as CheckBox
-        checkbox_retype.setOnCheckedChangeListener { _, isChecked ->
-            if (!isChecked) {
-                // show password
-                input_retype_password.transformationMethod = PasswordTransformationMethod.getInstance()
-
-            } else {
-                // hide password
-                input_retype_password.transformationMethod = HideReturnsTransformationMethod.getInstance()
-            }
-        }
-        //end showing password
-
-
-        //for changing icon states when edittext is not empty
-        input_user_firstname.addTextChangedListener(GenericTextWatcher(input_user_firstname, 0))
-        input_email.addTextChangedListener(GenericTextWatcher(input_email, 1))
-        input_country.addTextChangedListener(GenericTextWatcher(input_country, 2))
-        input_city.addTextChangedListener(GenericTextWatcher(input_city, 3))
-        input_phone.addTextChangedListener(object : TextWatcher {
+    private fun watchUserNameEt() {
+        et_userName.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
+                checkUserNameML = repo.checkUserName(p0.toString())
             }
 
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
             }
 
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                if (p0.toString().trim { it <= ' ' }.isEmpty()) {
-                    phoneDrawableLeft.setImageDrawable(resources.getDrawable(R.drawable.phone))
-                } else {
-                    phoneDrawableLeft.setImageDrawable(resources.getDrawable(R.drawable.phone_selected))
+            }
 
-                }
+        })
+        checkUserNameML.observe(this, android.arch.lifecycle.Observer {
+            if (it!!) {
+                tv_available.show()
+                tv_notAvailable.makeGone()
+            } else {
+                tv_available.makeGone()
+                tv_notAvailable.show()
             }
         })
-        input_birth.addTextChangedListener(GenericTextWatcher(input_birth, 5))
-        input_password.addTextChangedListener(GenericTextWatcher(input_password, 6))
-        input_retype_password.addTextChangedListener(GenericTextWatcher(input_retype_password, 7))
-        input_user_lastname.addTextChangedListener(GenericTextWatcher(input_user_lastname, 8))
-        input_user_name_unique.addTextChangedListener(GenericTextWatcher(input_user_name_unique, 9))
+    }
 
-        //end
-
-        //calendar fot the birthday edittext
-        myCalendar = Calendar.getInstance()
-        edittext = findViewById(R.id.input_birth)
-        content = findViewById(R.id.content)
-        cardview_birth = findViewById(R.id.cardview_birth)
-        layoutGender = findViewById(R.id.layoutGender)
-        val date = DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-            // TODO Auto-generated method stub
-            myCalendar.set(Calendar.YEAR, year)
-            myCalendar.set(Calendar.MONTH, monthOfYear)
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-            updateLabel()
+    private fun languageSelection() {
+        spinner.setOnClickListener {
+            if (cl_selectLangView.isVisible()) {
+                cl_selectLangView.makeGone()
+            } else {
+                cl_selectLangView.show()
+            }
         }
-        edittext.setOnClickListener {
-            // TODO Auto-generated method stub
-            DatePickerDialog(this@SignUpActivity, date, myCalendar
-                    .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                    myCalendar.get(Calendar.DAY_OF_MONTH)).show()
-        }
-        //calendar end
-
-
-        cardview_signup.setOnClickListener {
-            userSignUp()
-        }
+        tv_arabic.setOnClickListener { selectedLanguage = "ar" }
+        tv_english.setOnClickListener { selectedLanguage = "en" }
     }
 
     //calendar method start

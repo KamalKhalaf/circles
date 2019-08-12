@@ -30,12 +30,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@color/green" />
-
-        <include
-            android:id="@+id/inc_top"
-            layout="@layout/layout_add_pic_placeholder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -57,12 +51,6 @@
             android:layout_height="match_parent"
             android:src="@color/green" />
 
-        <include
-            android:id="@+id/inc_bottom_left"
-
-            layout="@layout/layout_add_pic_placeholder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -85,12 +73,6 @@
             android:layout_height="match_parent"
             android:src="@color/green" />
 
-        <include
-            android:id="@+id/inc_med_right"
-
-            layout="@layout/layout_add_pic_placeholder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -110,11 +92,6 @@
             android:layout_height="match_parent"
             android:src="@color/green" />
 
-        <include
-            android:id="@+id/inc_bottom_right"
-            layout="@layout/layout_add_pic_placeholder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -134,11 +111,6 @@
             android:layout_height="match_parent"
             android:src="@color/green" />
 
-        <include
-            android:id="@+id/inc_med_left"
-            layout="@layout/layout_add_pic_placeholder"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </android.support.v7.widget.CardView>
 
 

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/semi_background">
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/edit_profile_toolbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_pairing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="40dp"
+                android:text="Pairing\nSocial Media\nAccounts "
+                android:textColor="@color/blue_cancel_chooses_chat"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/include" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_social_links"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_pairing" />
+
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_addAccount"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/rounded_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.494"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rv_social_links">
+
+                <TextView
+                    android:id="@+id/tv_add_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:drawableStart="@drawable/avatar"
+                    android:drawablePadding="10dp"
+                    android:gravity="center"
+                    android:text="Add Account"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <Button
+                android:id="@+id/btn_done"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/rounded_green"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cl_addAccount" />
+
+            <Button
+                android:id="@+id/btn_skip"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounded_red"
+                android:text="skip"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_done" />
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

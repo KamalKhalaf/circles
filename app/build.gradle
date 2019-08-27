@@ -117,11 +117,11 @@ dependencies {
     implementation 'com.github.mayuce:LottieAlertDialog:1.1'
     implementation 'br.com.simplepass:loading-button-android:1.14.0'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-23'
-    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-23'
     //没有使用特殊Header，可以不加这行
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
     implementation 'cn.jzvd:jiaozivideoplayer:7.0.3'
+    implementation 'com.github.ome450901:SimpleRatingBar:1.4.3'
     //    implementation 'com.instachat:emoji-library:1.0.10'
     //    compile project(':emoji-library')
     compile('com.crashlytics.sdk.android:crashlytics:2.10.1@aar') {

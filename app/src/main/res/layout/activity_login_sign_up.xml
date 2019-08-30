@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bitmap"
+    android:background="@color/blue_cancel_chooses_chat"
     tools:context=".SplashScreen">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/bitmap" />
+        />
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/ic_logo_login" />
 
 
     <FrameLayout

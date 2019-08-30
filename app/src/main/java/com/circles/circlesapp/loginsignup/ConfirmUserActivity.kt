@@ -7,12 +7,12 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.CheckBox
 import android.widget.Toast
-import com.circles.circlesapp.Home
 import com.circles.circlesapp.R
 import com.circles.circlesapp.helpers.SharedPrefHelper
 import com.circles.circlesapp.helpers.base.BaseActivity
 import com.circles.circlesapp.helpers.retrofit.MyServiceInterceptor
 import com.circles.circlesapp.helpers.ui.GenericTextWatcher
+import com.circles.circlesapp.phase2.views.ui.Home2
 import com.circles.circlesapp.retrofit.RetrofitClient
 import com.circles.circlesapp.retrofit.responses.ConfirmEmailResponse
 import com.circles.circlesapp.retrofit.responses.LoginResponse
@@ -115,8 +115,6 @@ class ConfirmUserActivity : BaseActivity() {
 //                    val homeFragment = HomeFragment()
 
 
-
-
                 } else if (response.code() == 401) {
 
                     hideDialog()
@@ -134,7 +132,6 @@ class ConfirmUserActivity : BaseActivity() {
         })
 
     }
-
 
 
     private fun callLoginApi(email: String, passworde: String) {
@@ -163,12 +160,12 @@ class ConfirmUserActivity : BaseActivity() {
                     var tokenType = loginResponse.tokenType
                     MyServiceInterceptor.accessToken = accessToken;
                     MyServiceInterceptor.tokenType = tokenType;
-                    MyServiceInterceptor.authentication = tokenType +" "+accessToken;
+                    MyServiceInterceptor.authentication = tokenType + " " + accessToken;
                     MyServiceInterceptor.userId = response.body()!!.id
                     val prefHelper = SharedPrefHelper(this@ConfirmUserActivity)
                     prefHelper.userToken = MyServiceInterceptor.getAuth()
                     prefHelper.saveUserId(MyServiceInterceptor.userId)
-                    var dataIntent = Intent(this@ConfirmUserActivity, Home::class.java)
+                    var dataIntent = Intent(this@ConfirmUserActivity, Home2::class.java)
                     dataIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     dataIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     dataIntent.putExtra("ACCESS_TOKEN", accessToken)

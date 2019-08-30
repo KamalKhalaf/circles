@@ -1,0 +1,134 @@
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryDark"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:weightSum="10"
+            android:orientation="horizontal">
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/back"
+                    android:layout_height="wrap_content" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/logo"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/sign_up_profile"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarload"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="10dp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+            <!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="8"-->
+            <!--card_view:cardBackgroundColor="@android:color/transparent"-->
+            <!--card_view:cardCornerRadius="0dp"-->
+            <!--card_view:cardElevation="0dp"-->
+
+
+            <!--&gt;-->
+
+            <!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginStart="24dp"-->
+            <!--android:layout_marginEnd="24dp"-->
+            <!--card_view:cardBackgroundColor="@color/white"-->
+            <!--card_view:cardCornerRadius="15dp"-->
+            <!--card_view:cardElevation="0dp">-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/search_bar_edit_text"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:background="@null"-->
+            <!--android:cursorVisible="false"-->
+            <!--android:gravity="center"-->
+            <!--android:hint="Search for Friends or Events"-->
+            <!--android:imeOptions="actionSearch"-->
+            <!--android:inputType="textCapWords"-->
+            <!--android:textColor="#000000"-->
+            <!--android:textColorHint="#d3d3d3" />-->
+
+
+            <!--</android.support.v7.widget.CardView>-->
+            <!--</android.support.v7.widget.CardView>-->
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/search_view"
+                style="@style/MySearchViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:background="@drawable/search_shape"
+                android:focusable="false"
+                android:padding="2dp"
+                android:textSize="14sp"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/search_for_friends_or_events" />
+
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="2">
+
+
+                <ImageView
+                    android:id="@+id/notifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp"
+                    android:src="@drawable/notifications_bell_button" />
+
+                <include
+                    layout="@layout/notification_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@id/notifications"
+                    android:layout_alignTop="@id/notifications" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+</layout>

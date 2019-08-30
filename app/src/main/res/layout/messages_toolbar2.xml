@@ -27,12 +27,13 @@
                 android:id="@+id/userPic"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/sign_up_profile"
+                android:src="@drawable/vector_smart_object"
                 tools:srcCompat="@tools:sample/avatars" />
 
             <ProgressBar
                 android:id="@+id/progressBarload"
                 android:layout_width="40dp"
+                android:visibility="gone"
                 android:layout_height="40dp"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
@@ -43,8 +44,10 @@
         <TextView
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:text="sdsad"
+            android:text="Group Name"
             android:textColor="@color/white"
+            android:letterSpacing="0.02"
+            android:lineSpacingExtra="-15sp"
             android:textSize="20sp"
             android:id="@+id/title"
             android:gravity="left|center"

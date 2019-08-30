@@ -5,11 +5,11 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import android.view.WindowManager
-import com.circles.circlesapp.Home
 import com.circles.circlesapp.R
 import com.circles.circlesapp.helpers.SharedPrefHelper
 import com.circles.circlesapp.helpers.core.Constants
 import com.circles.circlesapp.helpers.retrofit.MyServiceInterceptor
+import com.circles.circlesapp.phase2.views.ui.Home2
 import com.facebook.CallbackManager
 import kotlinx.android.synthetic.main.activity_login_sign_up.*
 
@@ -20,7 +20,7 @@ class LoginSignUpActivity : AppCompatActivity() {
 
 
         if (SharedPrefHelper(this).userToken != "" && SharedPrefHelper(this).getBoolean(Constants.islogin)) {
-            val intent = Intent(this, Home::class.java)
+            val intent = Intent(this, Home2::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             MyServiceInterceptor.authentication = SharedPrefHelper(this).userToken;

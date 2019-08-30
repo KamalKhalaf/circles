@@ -19,6 +19,7 @@ import com.circles.circlesapp.helpers.base.BaseActivity
 import com.circles.circlesapp.helpers.core.Constants
 import com.circles.circlesapp.helpers.retrofit.MyServiceInterceptor
 import com.circles.circlesapp.helpers.ui.GenericTextWatcher
+import com.circles.circlesapp.phase2.views.ui.Home2
 import com.circles.circlesapp.retrofit.RetrofitClient
 import com.circles.circlesapp.retrofit.responses.ForgetPassword
 import com.circles.circlesapp.retrofit.responses.LoginResponse
@@ -184,9 +185,9 @@ class LoginActivity : BaseActivity() {
                         prefHelper.saveUserId(MyServiceInterceptor.userId)
 
 
-                        prefHelper.addData(Constants.is_celebrity , loginResponse.is_celebrity)
-                        prefHelper.addData(Constants.islogin , true)
-                        var dataIntent = Intent(this@LoginActivity, Home::class.java)
+                        prefHelper.addData(Constants.is_celebrity, loginResponse.is_celebrity)
+                        prefHelper.addData(Constants.islogin, true)
+                        var dataIntent = Intent(this@LoginActivity, Home2::class.java)
                         dataIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                         dataIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                         dataIntent.putExtra("ACCESS_TOKEN", accessToken)
@@ -292,7 +293,7 @@ class LoginActivity : BaseActivity() {
                     prefHelper.userToken = MyServiceInterceptor.getAuth()
 
                     prefHelper.saveUserId(MyServiceInterceptor.userId)
-                    var dataIntent = Intent(this@LoginActivity, Home::class.java)
+                    var dataIntent = Intent(this@LoginActivity, Home2::class.java)
                     dataIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
                     dataIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     dataIntent.putExtra("ACCESS_TOKEN", accessToken)

@@ -84,6 +84,27 @@
     </style>
 
 
+    <style name="productRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:maxHeight">20dp</item>
+        <item name="android:minWidth">20dp</item>
+        <item name="android:maxWidth">20dp</item>
+
+    </style>
+
+    <style name="productRatingBar_white" parent="@android:style/Widget.RatingBar">
+        <item name="colorControlNormal">#ffffff</item>
+        <item name="colorControlActivated">#ffe328</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:maxHeight">20dp</item>
+        <item name="android:minWidth">20dp</item>
+        <item name="android:maxWidth">20dp</item>
+
+    </style>
+
+
     <style name="Password_Dialog">
         <item name="android:windowAnimationStyle">@style/FadeUpDialogAnimation</item>
     </style>
@@ -107,7 +128,6 @@
 
     <style name="login_edit_text">
         <item name="android:textColor">@color/gray</item>
-        <item name="android:background">@drawable/log_border</item>
         <item name="android:textColorHint">@color/gray</item>
         <item name="android:color">@color/gray</item>
         <item name="android:singleLine">true</item>

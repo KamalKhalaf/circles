@@ -110,6 +110,11 @@
             android:name=".Home"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".phase2.views.ui.Home2"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".loginsignup.LoginActivity"
             android:windowSoftInputMode="adjustPan" />

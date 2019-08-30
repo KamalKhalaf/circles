@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_margin="10dp"
+            android:layout_width="70dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="70dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/other_user_image"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+
+                android:src="@drawable/layer_3_copy"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <View
+                android:id="@+id/isOnline"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/circle_online"/>
+            <View
+                android:id="@+id/isOffline"
+                android:layout_width="20dp"
+                android:visibility="gone"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/circle_offline"/>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:background="@drawable/rounded_white_chat"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/rectangle_4_copy_2" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/activity_padding"
+                        android:textStyle="bold"
+                        android:textColor="#00355f"
+                        android:lineSpacingExtra="0sp"
+                        android:layout_marginEnd="5dp"
+                        android:text="Users name"
+                        />
+
+                    <android.support.v7.widget.AppCompatRatingBar
+                        android:id="@+id/ratingBar"
+                        style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:layout_height="wrap_content"
+                        android:isIndicator="true"
+                        android:theme="@style/productRatingBar" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/activity_padding"
+                        android:textColor="#0078d7"
+                        android:letterSpacing="0.02"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="-11sp"
+                        android:gravity="center_horizontal"
+                        tools:text="5"
+                        />
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/larg_type"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="#00355f"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    android:lineSpacingExtra="0sp"
+                    tools:text="4.5 KM"
+                    />
+
+            </RelativeLayout>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/normal_typing"
+                android:layout_marginStart="10dp"
+                android:maxLines="4"
+                android:layout_marginEnd="10dp"
+                android:paddingEnd="2dp"
+                android:textColor="#00355f"
+                android:text="orem ipsum dolor sit amet, consectetur adipiscing elit. Integer ac est efficitur, imperdiet eros maximus, viverra Suspendisse consectetur nisi sit amet nulla"
+                />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/normal_typing"
+                    android:textColor="#0078d7"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:lineSpacingExtra="0sp"
+                    tools:text="11:21 pm"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

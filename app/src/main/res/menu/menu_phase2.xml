@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/circles_icon_blue"
+        android:title="circles"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/groups"
+        android:enabled="true"
+        android:icon="@drawable/shape_1"
+        android:title="groups"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/shape_111"
+        android:title="profile"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/message"
+        android:enabled="true"
+        android:icon="@drawable/shape_9"
+        android:title="message"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/friends"
+        android:enabled="true"
+        android:icon="@drawable/friends_icon"
+        android:title="friends"
+        app:showAsAction="always" />
+
+    <!--<item-->
+        <!--android:id="@+id/setting"-->
+        <!--android:enabled="true"-->
+        <!--android:icon="@drawable/shape_2"-->
+        <!--android:title="setting"-->
+        <!--app:showAsAction="always" />-->
+</menu>

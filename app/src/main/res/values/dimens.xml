@@ -2,10 +2,13 @@
 <resources>
     <dimen name="add_new_group_card_rad">15dp</dimen>
     <dimen name="radius_button">20sp</dimen>
+    <dimen name="larg_type">20sp</dimen>
+    <dimen name="small_2_type">12sp</dimen>
     <dimen name="image_hight">150dp</dimen>
     <dimen name="placeholder_text_height">8dp</dimen>
     <dimen name="placeholder_image">50dp</dimen>
     <dimen name="activity_padding">16dp</dimen>
+    <dimen name="normal_typing">14dp</dimen>
     <dimen name="dp_40">40dp</dimen>
     <dimen name="dp_50">50dp</dimen>
 </resources>

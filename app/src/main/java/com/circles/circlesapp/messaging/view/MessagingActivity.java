@@ -15,6 +15,7 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
+import com.circles.circlesapp.phase2.views.ui.ChatMessagingFragment;
 import com.circles.circlesapp.R;
 import com.circles.circlesapp.chatlist.ChatRoom;
 import com.circles.circlesapp.databinding.ActivityMessagingBinding;
@@ -43,7 +44,7 @@ public class MessagingActivity extends AppCompatActivity implements MessagingOpt
         if (getIntent() != null) {
             ChatRoom chatRoom = getIntent().getParcelableExtra(Constants.CHAT_ROOM_KEY);
             ActivityUtils.replaceFragmentInActivity(getSupportFragmentManager(),
-                    MessagingFragment2.newInstance(chatRoom),
+                    ChatMessagingFragment.newInstance(chatRoom),
                     R.id.frameLayout, false);
             b.toolbar.title.setText(chatRoom.title);
             if (chatRoom.image != null && !chatRoom.image.equals("")) {
@@ -82,8 +83,8 @@ public class MessagingActivity extends AppCompatActivity implements MessagingOpt
     public void sendImageOrVideo() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         for (int i = 0; i < fragments.size(); i++) {
-            if (fragments.get(i) instanceof MessagingFragment2) {
-                MessagingFragment2 f = (MessagingFragment2) fragments.get(i);
+            if (fragments.get(i) instanceof ChatMessagingFragment) {
+                ChatMessagingFragment f = (ChatMessagingFragment) fragments.get(i);
                 f.sendImageOrVideo();
             }
         }
@@ -93,8 +94,8 @@ public class MessagingActivity extends AppCompatActivity implements MessagingOpt
     public void sendFiles() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         for (int i = 0; i < fragments.size(); i++) {
-            if (fragments.get(i) instanceof MessagingFragment2) {
-                MessagingFragment2 f = (MessagingFragment2) fragments.get(i);
+            if (fragments.get(i) instanceof ChatMessagingFragment) {
+                ChatMessagingFragment f = (ChatMessagingFragment) fragments.get(i);
                 f.sendFiles();
             }
         }
@@ -104,8 +105,8 @@ public class MessagingActivity extends AppCompatActivity implements MessagingOpt
     public void crestePoll() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
         for (int i = 0; i < fragments.size(); i++) {
-            if (fragments.get(i) instanceof MessagingFragment2) {
-                MessagingFragment2 f = (MessagingFragment2) fragments.get(i);
+            if (fragments.get(i) instanceof ChatMessagingFragment) {
+                ChatMessagingFragment f = (ChatMessagingFragment) fragments.get(i);
                 f.createPoll();
             }
         }
@@ -119,8 +120,8 @@ public class MessagingActivity extends AppCompatActivity implements MessagingOpt
             if (fragments.get(i) instanceof PollFragment) {
                 PollFragment f = (PollFragment) fragments.get(i);
                 f.onActivityResult(requestCode, resultCode, data);
-            } else if (fragments.get(i) instanceof MessagingFragment2) {
-                MessagingFragment2 f = (MessagingFragment2) fragments.get(i);
+            } else if (fragments.get(i) instanceof ChatMessagingFragment) {
+                ChatMessagingFragment f = (ChatMessagingFragment) fragments.get(i);
                 f.onActivityResult(requestCode, resultCode, data);
             }
         }

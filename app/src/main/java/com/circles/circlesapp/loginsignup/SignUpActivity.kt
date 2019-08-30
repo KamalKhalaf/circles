@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.*
@@ -30,8 +31,14 @@ import com.vincent.filepicker.activity.BaseActivity.IS_NEED_FOLDER_LIST
 import com.vincent.filepicker.activity.ImagePickActivity
 import com.vincent.filepicker.activity.ImagePickActivity.IS_NEED_CAMERA
 import com.vincent.filepicker.filter.entity.ImageFile
+import kotlinx.android.synthetic.main.activity_login_2.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.activity_signup_2.*
+import kotlinx.android.synthetic.main.activity_signup_2.cl_selectLangView
+import kotlinx.android.synthetic.main.activity_signup_2.et_userName
+import kotlinx.android.synthetic.main.activity_signup_2.spinner
+import kotlinx.android.synthetic.main.activity_signup_2.tv_arabic
+import kotlinx.android.synthetic.main.activity_signup_2.tv_english
 import okhttp3.RequestBody
 import org.json.JSONObject
 import java.io.File
@@ -67,6 +74,19 @@ class SignUpActivity : BaseActivity(), OnCountryPickerListener {
         languageSelection()
         watchUserNameEt()
         hideSoftKeyboardListener()
+        selectLanguageVisibility()
+    }
+
+    private fun selectLanguageVisibility() {
+        spinner.setOnClickListener {
+            if (cl_selectLangView.visibility == View.VISIBLE) {
+                cl_selectLangView.show()
+                Toast.makeText(this, "sh", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "go", Toast.LENGTH_SHORT).show()
+                cl_selectLangView.makeGone()
+            }
+        }
     }
 
     private fun watchUserNameEt() {

@@ -9,11 +9,11 @@ import android.util.Patterns
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
-import com.circles.circlesapp.Home
-import com.circles.circlesapp.R
+import com.circles.circlesapp.*
 import com.circles.circlesapp.helpers.SharedPrefHelper
 import com.circles.circlesapp.helpers.base.BaseActivity
 import com.circles.circlesapp.helpers.core.Constants
@@ -24,6 +24,7 @@ import com.circles.circlesapp.retrofit.responses.ForgetPassword
 import com.circles.circlesapp.retrofit.responses.LoginResponse
 import com.circles.circlesapp.retrofit.responses.ResetPassword
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login_2.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,13 +39,13 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login_2)
         if (SharedPrefHelper().getUserEmail(this) != null && SharedPrefHelper().getUserPassword(this) != null) {
             LoginFromSharedPref(SharedPrefHelper().getUserEmail(this), SharedPrefHelper().getUserPassword(this))
         }
         hideSoftKeyboardListener()
         //on click sign up text view move to sign up activity
-        val signupTV = findViewById<TextView>(R.id.signup_textview)
+        val signupTV = findViewById<Button>(R.id.btn_signup)
         signupTV.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
@@ -52,27 +53,21 @@ class LoginActivity : BaseActivity() {
         //end
 
         //for changing icon states when edittext is not empty
-        input_email.addTextChangedListener(GenericTextWatcher(input_email, 0))
-        input_password.addTextChangedListener(GenericTextWatcher(input_password, 6))
+        et_userName.addTextChangedListener(GenericTextWatcher(et_userName, 0))
+        et_password.addTextChangedListener(GenericTextWatcher(et_password, 6))
         //end
 
-
-        //show password
-        var checkbox = findViewById<View>(R.id.check_password) as CheckBox
-        checkbox.setOnCheckedChangeListener { _, isChecked ->
-            if (!isChecked) {
-                // show password
-                input_password.transformationMethod = PasswordTransformationMethod.getInstance()
-
-            } else {
-                // hide password
-                input_password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+        spinner.setOnClickListener {
+            if(cl_selectLangView.visibility==View.VISIBLE){
+                cl_selectLangView.show()
+                Toast.makeText(this,"sh",Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(this,"go",Toast.LENGTH_SHORT).show()
+                cl_selectLangView.makeGone()
             }
         }
-        //end showing password
 
-
-        val forgot_password = findViewById<View>(R.id.forgot_password) as TextView
+        val forgot_password = findViewById<View>(R.id.tv_forgot_password) as TextView
         forgot_password.setOnClickListener {
 
             if (SystemClock.elapsedRealtime() - mLastClickTime < 500) {
@@ -93,7 +88,7 @@ class LoginActivity : BaseActivity() {
             }
         }
 
-        reset_password.setOnClickListener {
+      /*  reset_password.setOnClickListener {
             if (SystemClock.elapsedRealtime() - mLastClickTime < 500) {
                 return@setOnClickListener
             }
@@ -109,9 +104,9 @@ class LoginActivity : BaseActivity() {
 
             }
         }
+*/
 
-
-        btnServerLogin.setOnClickListener {
+        btn_login.setOnClickListener {
             LoginViaEmail()
 
         }
@@ -154,7 +149,6 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun callLoginApi(email: String, passworde: String) {
-        btnServerLogin.startAnimation();
         val deviceToken = SharedPrefHelper(this).deviceToken
         var call: Call<LoginResponse> = RetrofitClient
                 .getInstance()
@@ -162,17 +156,13 @@ class LoginActivity : BaseActivity() {
                 .login(email, passworde, deviceToken)
         call.enqueue(object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
-                if (this@LoginActivity != null) {
-                    btnServerLogin.revertAnimation()
-                }
+
                 Toast.makeText(this@LoginActivity, "network error", Toast.LENGTH_LONG).show()
 
             }
 
             override fun onResponse(call: Call<LoginResponse>?, response: Response<LoginResponse>?) {
-                if (this@LoginActivity != null) {
-                    btnServerLogin.revertAnimation()
-                }
+
 
                 if (response!!.isSuccessful) {
 
@@ -263,12 +253,10 @@ class LoginActivity : BaseActivity() {
     override fun onResume() {
         super.onResume()
 
-        btnServerLogin.revertAnimation()
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        btnServerLogin.dispose();
     }
 
     private fun callResetPassword(resetModel: ForgetResetModel?, dialogForgotPassowrd: DialogForgotPassowrd) {

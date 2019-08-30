@@ -112,5 +112,6 @@
     <string name="settings">Settings</string>
     <string name="privacy_settings">privacy \nSettings</string>
     <string name="friends_list">Friends list</string>
+    <string name="votes">Votes</string>
 
 </resources>

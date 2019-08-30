@@ -5,8 +5,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/tv_settings"
@@ -48,7 +47,8 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            tools:itemCount="10"
+            app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+            tools:itemCount="5"
             tools:listitem="@layout/item_friend"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

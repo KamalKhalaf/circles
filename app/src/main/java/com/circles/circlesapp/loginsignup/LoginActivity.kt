@@ -61,11 +61,14 @@ class LoginActivity : BaseActivity() {
         spinner.setOnClickListener {
           //  if(cl_selectLangView.visibility==View.VISIBLE){
                 cl_selectLangView.show()
-                Toast.makeText(this,"sh",Toast.LENGTH_SHORT).show()
            /* }else{
                 Toast.makeText(this,"go",Toast.LENGTH_SHORT).show()
                 cl_selectLangView.makeGone()
             }*/
+        }
+        tv_english.setOnClickListener {
+            Toast.makeText(this,"sh",Toast.LENGTH_SHORT).show()
+
         }
 
         val forgot_password = findViewById<View>(R.id.tv_forgot_password) as TextView

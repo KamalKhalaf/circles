@@ -37,6 +37,23 @@
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/circle_online" />
 
+
+                <View
+                    android:id="@+id/isOnline"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/circle_online"/>
+                <View
+                    android:id="@+id/isOffline"
+                    android:layout_width="20dp"
+                    android:visibility="gone"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/circle_offline"/>
+
             </RelativeLayout>
 
 

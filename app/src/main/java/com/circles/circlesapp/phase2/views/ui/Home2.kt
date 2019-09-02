@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
-import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
@@ -16,7 +15,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.circles.circlesapp.R
 import com.circles.circlesapp.addgroup.AddGroupFragment
-import com.circles.circlesapp.chatlist.ChatsFragment
 import com.circles.circlesapp.fcm.constants.Config
 import com.circles.circlesapp.helpers.SharedPrefHelper
 import com.circles.circlesapp.helpers.kotlin.ActivityUtilsKotlin
@@ -149,16 +147,16 @@ class Home2 : AppCompatActivity() {
 
     @SuppressLint("RestrictedApi")
     fun navVisabilty(isVisable: Boolean) {
-        val actionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton)
+
         val activityName = findViewById<TextView>(R.id.actionName)
         val navigationView = findViewById<BottomNavigationView>(R.id.navigation)
         if (isVisable) {
-            activityName.visibility = View.VISIBLE
-            actionButton.visibility = View.VISIBLE
+//            activityName.visibility = View.VISIBLE
+//            actionButton.visibility = View.VISIBLE
             navigationView.visibility = View.VISIBLE
         } else {
-            activityName.visibility = View.GONE
-            actionButton.visibility = View.GONE
+//            activityName.visibility = View.GONE
+//            actionButton.visibility = View.GONE
             navigationView.visibility = View.GONE
         }
     }

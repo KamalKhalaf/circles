@@ -21,7 +21,10 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/ivShowProfileDialouge"
                 android:layout_width="wrap_content"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
                 android:gravity="center_vertical"
@@ -43,7 +46,7 @@
                     android:lineSpacingExtra="-13sp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/normal_typing"
-                    tools:text="3.7" />
+                    android:text="3.7" />
 
                 <android.support.v7.widget.AppCompatRatingBar
                     android:id="@+id/ratingBar"
@@ -76,7 +79,7 @@
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                tools:text="4.5 km " />
+                android:text="4.5 km " />
         </RelativeLayout>
 
 
@@ -233,7 +236,7 @@
                         android:lineSpacingExtra="-13sp"
                         android:textColor="@color/white"
                         android:textSize="@dimen/normal_typing"
-                        tools:text="DD/MM/YYYY" />
+                        android:text="DD/MM/YYYY" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -244,7 +247,7 @@
                         android:lineSpacingExtra="-17sp"
                         android:textColor="@color/white"
                         android:textSize="@dimen/normal_typing"
-                        tools:text="m / 32" />
+                        android:text="m / 32" />
 
                 </RelativeLayout>
 
@@ -274,7 +277,7 @@
                     android:lineSpacingExtra="-11sp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/normal_typing"
-                    tools:text="25th of street, Jedda, Ksa" />
+                    android:text="25th of street, Jedda, Ksa" />
 
                 <View
                     android:layout_width="match_parent"
@@ -304,7 +307,7 @@
                     android:paddingEnd="10dp"
                     android:textColor="@color/white"
                     android:textSize="@dimen/normal_typing"
-                    tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat tempor eros eget egestas. Maecenas quis porta turpis, sit amet iaculis diam. Suspendisse pretium risus massa, vitae tincidunt ipsum euismod quis. Ut sapien nisl, venenatis a congue eu, convallis nec dolor. Proin vel turpis dapibus, euismod nisl vel, tristique purus. Aliquam gravida, ipsum eget congue porttitor, tellus ipsum efficitur lectus, sit amet convallis nisi nunc sit amet odio. Donec sit amet urna id lectus tristique consequat ut a mauris. Praesent pellentesque eu nulla nec bibendum. Integer in orci cursus, suscipit tortor id, efficitur arcu." />
+                    android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat tempor eros eget egestas. Maecenas quis porta turpis, sit amet iaculis diam. Suspendisse pretium risus massa, vitae tincidunt ipsum euismod quis. Ut sapien nisl, venenatis a congue eu, convallis nec dolor. Proin vel turpis dapibus, euismod nisl vel, tristique purus. Aliquam gravida, ipsum eget congue porttitor, tellus ipsum efficitur lectus, sit amet convallis nisi nunc sit amet odio. Donec sit amet urna id lectus tristique consequat ut a mauris. Praesent pellentesque eu nulla nec bibendum. Integer in orci cursus, suscipit tortor id, efficitur arcu." />
 
                 <View
                     android:layout_width="match_parent"

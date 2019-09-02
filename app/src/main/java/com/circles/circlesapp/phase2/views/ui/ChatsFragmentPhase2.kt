@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import com.circles.circlesapp.R
+import com.circles.circlesapp.chatlist.ChatRoom
 import com.circles.circlesapp.helpers.MyDividerItemDecoration
 import com.circles.circlesapp.helpers.SharedPrefHelper
 import com.circles.circlesapp.phase2.views.adapter.MessageAdapterPhase2
@@ -41,6 +42,7 @@ class ChatsFragmentPhase2 : Fragment() {
     lateinit var scrollToTop: LinearLayout
     lateinit var recyclerView: RecyclerView
     lateinit var no_items_layout: LinearLayout
+    lateinit var messageLists: List<ChatRoom>
     lateinit var mAdapter: MessageAdapterPhase2
     private var mRefreshLayout: SmartRefreshLayout? = null
     private var isFirstEnter = false
@@ -70,7 +72,8 @@ class ChatsFragmentPhase2 : Fragment() {
             mShimmerViewContainer!!.startShimmerAnimation()
 //            viewModel.getChatRooms()
         })
-
+        messageLists = listOf()
+        mAdapter = MessageAdapterPhase2(messageLists)
         recyclerView.adapter = mAdapter
         if (isFirstEnter) {
             mRefreshLayout!!.finishRefresh()

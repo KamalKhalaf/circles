@@ -16,7 +16,7 @@ import com.circles.circlesapp.phase2.views.adapter.ListOfGroupsAdapter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfilePhase2Fragment extends Fragment {
+public class ProfilePhase2Fragment extends Fragment implements View.OnClickListener {
 
 
     FragmentProfilePhase2Binding binding;
@@ -58,5 +58,27 @@ public class ProfilePhase2Fragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
+        binding.ivShowProfileDialouge.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.ivShowProfileDialouge:
+                showFragment(ProfileSettingDialouge.newInstance());
+                break;
+        }
+    }
+
+
+    private void showFragment(Fragment fragment) {
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .add(android.R.id.content, fragment, "rageComicList")
+                .addToBackStack(null)
+                .commit();
     }
 }

@@ -118,38 +118,40 @@ class LoginActivity : BaseActivity() {
 
     private fun LoginFromSharedPref(email: String, passworde: String) {
 //        callLoginApi(email, passworde)
-        input_email.setText(email)
-        input_password.setText(passworde)
+        et_userName.setText(email)
+        et_password.setText(passworde)
     }
 
     fun LoginViaEmail() {
+        var dataIntent = Intent(this@LoginActivity, Home2::class.java)
 
+        startActivity(dataIntent)
 
-        val email = input_email.text.toString().trim()
-        val passworde = input_password.text.toString().trim()
+        val email = et_userName.text.toString().trim()
+        val passworde = et_password.text.toString().trim()
 
         if (passworde.isEmpty()) {
-            input_password.setError("Password required")
-            input_password.requestFocus()
+            et_password.setError("Password required")
+            et_password.requestFocus()
             return
         }
         if (passworde.length < 8) {
-            input_password.setError("Password should be atleast 8 character long")
-            input_password.requestFocus()
+            et_password.setError("Password should be atleast 8 character long")
+            et_password.requestFocus()
             return
         }
         if (email.isEmpty()) {
-            input_email.setError("Email is required")
-            input_email.requestFocus()
+            et_userName.setError("Email is required")
+            et_userName.requestFocus()
             return
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            input_email.setError("Enter a valid email")
-            input_email.requestFocus()
+            et_userName.setError("Enter a valid email")
+            et_userName.requestFocus()
             return
         }
 
-        callLoginApi(email, passworde)
+       // callLoginApi(email, passworde)
     }
 
     private fun callLoginApi(email: String, passworde: String) {

@@ -63,13 +63,13 @@ class ChatsFragmentPhase2 : Fragment() {
 //        viewModel.getChatRooms()
 
         mRefreshLayout = view.findViewById(R.id.refreshLayout) as SmartRefreshLayout
-        mRefreshLayout!!.setOnRefreshListener({
+        mRefreshLayout!!.setOnRefreshListener {
             isFirstEnter = true
-            recyclerView!!.setVisibility(View.GONE)
-            mShimmerViewContainer!!.setVisibility(View.VISIBLE)
+            recyclerView.visibility = View.GONE
+            mShimmerViewContainer!!.visibility = View.VISIBLE
             mShimmerViewContainer!!.startShimmerAnimation()
 //            viewModel.getChatRooms()
-        })
+        }
 
         recyclerView.adapter = mAdapter
         if (isFirstEnter) {

@@ -222,7 +222,6 @@
                                 android:background="@drawable/rounded_white_backg"
                                 android:paddingLeft="10dp"
                                 android:gravity="start"
-
                                 android:paddingRight="10dp"
                                 android:text="80%" />
 

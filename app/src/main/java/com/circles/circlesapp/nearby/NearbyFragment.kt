@@ -210,7 +210,7 @@ class NearbyFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickLi
             }, 2500)
 
         }
-        activity!!.findViewById<FloatingActionButton>(R.id.floatingActionButton).isEnabled = true
+//        activity!!.findViewById<FloatingActionButton>(R.id.floatingActionButton).isEnabled = true
         val toolbar = activity!!.findViewById<View>(R.id.toolbar) as Toolbar?
         lateinit var profile_img: CircleImageView
         profile_img = toolbar?.findViewById<CircleImageView>(R.id.logo)!!
@@ -230,25 +230,25 @@ class NearbyFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickLi
         }
 
 
-        val fab: FloatingActionButton = activity!!.findViewById<FloatingActionButton>(R.id.floatingActionButton)
-        activity!!.findViewById<TextView>(R.id.actionName).visibility = View.VISIBLE
-        activity!!.findViewById<TextView>(R.id.actionName).setText(getString(R.string.add_new))
-        fab.setImageResource(R.drawable.ic_add)
-        fab.visibility = View.VISIBLE
-        fab.setOnClickListener {
-
-        }
-
-        fab.setOnClickListener(View.OnClickListener {
-            Log.d("test", "adddddd")
-            if (b!!.shape.visibility != View.VISIBLE) {
-                b!!.shape.visibility = View.VISIBLE
-                fab.setImageDrawable(resources.getDrawable(R.drawable.ic_x))
-            } else {
-                b!!.shape.visibility = View.GONE
-                fab.setImageDrawable(resources.getDrawable(R.drawable.ic_add))
-            }
-        })
+//        val fab: FloatingActionButton = activity!!.findViewById<FloatingActionButton>(R.id.floatingActionButton)
+//        activity!!.findViewById<TextView>(R.id.actionName).visibility = View.VISIBLE
+//        activity!!.findViewById<TextView>(R.id.actionName).setText(getString(R.string.add_new))
+//        fab.setImageResource(R.drawable.ic_add)
+//        fab.visibility = View.VISIBLE
+//        fab.setOnClickListener {
+//
+//        }
+//
+//        fab.setOnClickListener(View.OnClickListener {
+//            Log.d("test", "adddddd")
+//            if (b!!.shape.visibility != View.VISIBLE) {
+//                b!!.shape.visibility = View.VISIBLE
+//                fab.setImageDrawable(resources.getDrawable(R.drawable.ic_x))
+//            } else {
+//                b!!.shape.visibility = View.GONE
+//                fab.setImageDrawable(resources.getDrawable(R.drawable.ic_add))
+//            }
+//        })
 
         observeOnNearbyResponse()
         b!!.publicGroup.setOnClickListener { v ->

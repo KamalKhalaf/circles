@@ -228,16 +228,16 @@ public class ChatMessagingFragment extends Fragment implements CustomOnClickList
         });
 
         List<MessagePhase2> models = new ArrayList<>();
-//        models.add(new MessagePhase2(true , "Kamal khalaf" , "20 KM" , "12.30 AM" , false));
-//        models.add(new MessagePhase2(false , "Mohammed khalaf" , "1.5 KM" , "12.30 AM" , false));
-//        models.add(new MessagePhase2(true , "Ahmed Magdy" , "10 KM" , "12.30 PM" , true));
-//        models.add(new MessagePhase2(false , "User Name" , "15 KM" , "1.30 AM" , false));
-//        models.add(new MessagePhase2(true , "User Name" , "0.5 KM" , "5.8 PM" , false));
-//        models.add(new MessagePhase2(false , "User Name" , "200 KM" , "4.03 AM" , false));
-//        models.add(new MessagePhase2(true , "User Name" , "1.8 KM" , "8.22 PM" , false));
-//        models.add(new MessagePhase2(true , "User Name" , "3.5 KM" , "5.30 AM" , true));
-//        models.add(new MessagePhase2(false , "User Name" , "50 KM" , "12.11 PM" , false));
-//        models.add(new MessagePhase2(true , "User Name" , "44 KM" , "7.07 PM" , true));
+        models.add(new MessagePhase2(true , "Kamal khalaf" , "20 KM" , "12.30 AM" , false));
+        models.add(new MessagePhase2(false , "Mohammed khalaf" , "1.5 KM" , "12.30 AM" , false));
+        models.add(new MessagePhase2(true , "Ahmed Magdy" , "10 KM" , "12.30 PM" , true));
+        models.add(new MessagePhase2(false , "User Name" , "15 KM" , "1.30 AM" , false));
+        models.add(new MessagePhase2(true , "User Name" , "0.5 KM" , "5.8 PM" , false));
+        models.add(new MessagePhase2(false , "User Name" , "200 KM" , "4.03 AM" , false));
+        models.add(new MessagePhase2(true , "User Name" , "1.8 KM" , "8.22 PM" , false));
+        models.add(new MessagePhase2(true , "User Name" , "3.5 KM" , "5.30 AM" , true));
+        models.add(new MessagePhase2(false , "User Name" , "50 KM" , "12.11 PM" , false));
+        models.add(new MessagePhase2(true , "User Name" , "44 KM" , "7.07 PM" , true));
         adapter = new MessagesAdapterPhase2(getActivity(), models);
         b.rvMessaging.setAdapter(adapter);
 

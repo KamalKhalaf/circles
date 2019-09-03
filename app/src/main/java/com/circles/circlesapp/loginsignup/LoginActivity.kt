@@ -3,17 +3,14 @@ package com.circles.circlesapp.loginsignup
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
-import android.text.method.HideReturnsTransformationMethod
-import android.text.method.PasswordTransformationMethod
 import android.util.Patterns
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
-import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
-import com.circles.circlesapp.*
+import com.circles.circlesapp.R
 import com.circles.circlesapp.helpers.SharedPrefHelper
 import com.circles.circlesapp.helpers.base.BaseActivity
 import com.circles.circlesapp.helpers.core.Constants
@@ -24,6 +21,7 @@ import com.circles.circlesapp.retrofit.RetrofitClient
 import com.circles.circlesapp.retrofit.responses.ForgetPassword
 import com.circles.circlesapp.retrofit.responses.LoginResponse
 import com.circles.circlesapp.retrofit.responses.ResetPassword
+import com.circles.circlesapp.show
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login_2.*
 import retrofit2.Call
@@ -59,15 +57,15 @@ class LoginActivity : BaseActivity() {
         //end
 
         spinner.setOnClickListener {
-          //  if(cl_selectLangView.visibility==View.VISIBLE){
-                cl_selectLangView.show()
-           /* }else{
-                Toast.makeText(this,"go",Toast.LENGTH_SHORT).show()
-                cl_selectLangView.makeGone()
-            }*/
+            //  if(cl_selectLangView.visibility==View.VISIBLE){
+            cl_selectLangView.show()
+            /* }else{
+                 Toast.makeText(this,"go",Toast.LENGTH_SHORT).show()
+                 cl_selectLangView.makeGone()
+             }*/
         }
         tv_english.setOnClickListener {
-            Toast.makeText(this,"sh",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "sh", Toast.LENGTH_SHORT).show()
 
         }
 
@@ -92,23 +90,23 @@ class LoginActivity : BaseActivity() {
             }
         }
 
-      /*  reset_password.setOnClickListener {
-            if (SystemClock.elapsedRealtime() - mLastClickTime < 500) {
-                return@setOnClickListener
-            }
-            mLastClickTime = SystemClock.elapsedRealtime()
-            val dialogForgotPassowrd = DialogForgotPassowrd(this, true)
-            dialogForgotPassowrd.Show_forgot_dialog { isOk, resetModel ->
+        /*  reset_password.setOnClickListener {
+              if (SystemClock.elapsedRealtime() - mLastClickTime < 500) {
+                  return@setOnClickListener
+              }
+              mLastClickTime = SystemClock.elapsedRealtime()
+              val dialogForgotPassowrd = DialogForgotPassowrd(this, true)
+              dialogForgotPassowrd.Show_forgot_dialog { isOk, resetModel ->
 
-                if (isOk) {
-                    callResetPassword(resetModel, dialogForgotPassowrd)
-                } else {
+                  if (isOk) {
+                      callResetPassword(resetModel, dialogForgotPassowrd)
+                  } else {
 
-                }
+                  }
 
-            }
-        }
-*/
+              }
+          }
+  */
 
         btn_login.setOnClickListener {
             LoginViaEmail()

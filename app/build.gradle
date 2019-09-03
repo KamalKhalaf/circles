@@ -117,6 +117,7 @@ dependencies {
     implementation 'com.github.mayuce:LottieAlertDialog:1.1'
     implementation 'br.com.simplepass:loading-button-android:1.14.0'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-23'
+
     //没有使用特殊Header，可以不加这行
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'

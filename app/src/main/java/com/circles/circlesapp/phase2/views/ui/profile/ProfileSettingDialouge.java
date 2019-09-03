@@ -1,4 +1,4 @@
-package com.circles.circlesapp.phase2.views.ui;
+package com.circles.circlesapp.phase2.views.ui.profile;
 /*
  *
  * Created by Kamal Khalaf on 9/2/2019.
@@ -6,12 +6,13 @@ package com.circles.circlesapp.phase2.views.ui;
  *
  */
 
-import android.content.Intent;
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,7 @@ public class ProfileSettingDialouge extends Fragment {
                              Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.profile_setting_dialouge, container, false);
         mBinding.setLifecycleOwner(this);
+        ProfileViewModel  viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
 
         mBinding.ivClose.setOnClickListener(view -> {
             FragmentActivity activity = getActivity();
@@ -48,8 +50,8 @@ public class ProfileSettingDialouge extends Fragment {
             activity.onBackPressed();
         });
         mBinding.llSettings.setOnClickListener(v ->{
-            Intent intent = new Intent(getActivity(), AccountSettingsActivity.class);
-            startActivity(intent);
+            viewModel.showAccountSettings.postValue(true);
+
         });
         return mBinding.getRoot();
     }

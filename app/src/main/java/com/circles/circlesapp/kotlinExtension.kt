@@ -3,7 +3,7 @@ package com.circles.circlesapp
 import android.view.View
 
 fun View.isVisible(): Boolean {
-    return visibility == View.VISIBLE
+    return this.visibility == View.VISIBLE
 }
 
 fun View.show() {

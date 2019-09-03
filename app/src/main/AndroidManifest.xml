@@ -17,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".phase2.views.ui.AccountSettingsActivity"></activity>
+        <activity android:name=".phase2.views.ui.profile.AccountSettingsFragment"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

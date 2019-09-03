@@ -23,6 +23,7 @@ import com.circles.circlesapp.home.AddTextCommentFragment
 import com.circles.circlesapp.messaging.view.RecordAudioDialogFragment
 import com.circles.circlesapp.nearby.NearbyFragment
 import com.circles.circlesapp.notifications.NotificationsActivity
+import com.circles.circlesapp.phase2.views.ui.profile.ProfilePhase2Fragment
 import com.circles.circlesapp.settings.ui.SettingsActivity
 import de.hdodenhof.circleimageview.CircleImageView
 

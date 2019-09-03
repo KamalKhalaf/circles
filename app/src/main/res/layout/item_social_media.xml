@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.circles.circlesapp.phase2.views.ui.profile.SocialMediaModel" />
+
+    </data>
 <android.support.constraint.ConstraintLayout 
     android:layout_width="match_parent"
     android:layout_height="60dp"
+    android:layout_marginTop="8dp"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/rounded_white">
 
@@ -12,6 +20,7 @@
         android:id="@+id/iv_left"
         tools:src="@drawable/logo"
         android:layout_width="40dp"
+        imageId="@{model.imageId}"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,6 +36,7 @@
         android:layout_marginBottom="8dp"
         android:textColor="@color/black"
         android:textSize="18sp"
+        android:text="@={model.name}"
         android:textStyle="bold"
         app:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/iv_left"
@@ -40,6 +50,7 @@
         android:layout_width="40dp"
         android:layout_height="match_parent"
         android:layout_marginStart="16dp"
+        imageId="@{model.rightImage}"
         android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@id/iv_right_link"
         app:layout_constraintEnd_toEndOf="parent"

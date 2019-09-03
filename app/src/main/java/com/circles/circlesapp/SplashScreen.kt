@@ -9,6 +9,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.Toast
 import com.circles.circlesapp.helpers.AppConstants.post_from_splash
+import com.circles.circlesapp.loginsignup.LoginActivity
 import com.circles.circlesapp.loginsignup.LoginSignUpActivity
 import com.crashlytics.android.Crashlytics
 import io.fabric.sdk.android.Fabric
@@ -51,7 +52,7 @@ class SplashScreen : AppCompatActivity() {
 
         setContentView(R.layout.activity_splash_screen)
         Handler().postDelayed({
-            val mainIntent = Intent(this@SplashScreen, LoginSignUpActivity::class.java)
+            val mainIntent = Intent(this@SplashScreen, LoginActivity::class.java)
             this@SplashScreen.startActivity(mainIntent)
             this@SplashScreen.finish()
             /* Create an Intent that will start the Menu-Activity. */

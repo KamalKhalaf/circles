@@ -1,10 +1,12 @@
-package com.circles.circlesapp.phase2.views.ui;
+package com.circles.circlesapp.phase2.views.ui.profile;
 
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,6 +53,16 @@ public class ProfilePhase2Fragment extends Fragment implements View.OnClickListe
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile_phase2, container, false);
+        ProfileViewModel viewModel = ViewModelProviders.of(requireActivity()).get(ProfileViewModel.class);
+        viewModel.showAccountSettings.observe(getViewLifecycleOwner(), aBoolean -> {
+                    if (aBoolean != null && aBoolean) {
+                        FragmentActivity activity = getActivity();
+                        if (activity == null) return;
+                        activity.onBackPressed();
+                        showInnerFragment(new AccountSettingsFragment());
+                    }
+                }
+        );
         return binding.getRoot();
     }
 
@@ -78,6 +90,14 @@ public class ProfilePhase2Fragment extends Fragment implements View.OnClickListe
         getActivity().getSupportFragmentManager()
                 .beginTransaction()
                 .add(android.R.id.content, fragment, "rageComicList")
+                .addToBackStack(null)
+                .commit();
+    }
+
+    private void showInnerFragment(Fragment fragment) {
+        getActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.content, fragment, "")
                 .addToBackStack(null)
                 .commit();
     }

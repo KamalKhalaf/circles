@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/layer_5"
 
-        tools:context=".phase2.views.ui.ProfilePhase2Fragment">
+        tools:context=".phase2.views.ui.profile.ProfilePhase2Fragment">
 
 
         <ScrollView

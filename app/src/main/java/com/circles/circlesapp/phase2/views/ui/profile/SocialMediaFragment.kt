@@ -9,12 +9,8 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import com.circles.circlesapp.R
 import com.circles.circlesapp.databinding.LayoutEdtProfileSocialMediaBinding
-import com.circles.circlesapp.databinding.PrivacyLayout2Binding
-import com.circles.circlesapp.databinding.SettingsLayoutBinding
-import com.circles.circlesapp.isVisible
 import com.circles.circlesapp.phase2.views.adapter.ListOfSocialMediasAdapter
 
 

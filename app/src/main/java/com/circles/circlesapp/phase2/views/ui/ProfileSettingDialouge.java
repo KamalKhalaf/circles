@@ -6,6 +6,7 @@ package com.circles.circlesapp.phase2.views.ui;
  *
  */
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -46,7 +47,10 @@ public class ProfileSettingDialouge extends Fragment {
             if (activity == null) return;
             activity.onBackPressed();
         });
-
+        mBinding.llSettings.setOnClickListener(v ->{
+            Intent intent = new Intent(getActivity(), AccountSettingsActivity.class);
+            startActivity(intent);
+        });
         return mBinding.getRoot();
     }
 
@@ -55,21 +59,18 @@ public class ProfileSettingDialouge extends Fragment {
         super.onResume();
         getView().setFocusableInTouchMode(true);
         getView().requestFocus();
-        getView().setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
+        getView().setOnKeyListener((v, keyCode, event) -> {
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
 
-                    try {
-                        FragmentActivity activity = getActivity();
-                        activity.onBackPressed();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    return true;
+                try {
+                    FragmentActivity activity = getActivity();
+                    activity.onBackPressed();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-                return false;
+                return true;
             }
+            return false;
         });
     }
 }

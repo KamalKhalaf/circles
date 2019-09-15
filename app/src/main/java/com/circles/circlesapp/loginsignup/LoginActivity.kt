@@ -3,7 +3,6 @@ package com.circles.circlesapp.loginsignup
 import android.content.Intent
 import android.os.Bundle
 import android.os.SystemClock
-import android.util.Patterns
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -16,13 +15,13 @@ import com.circles.circlesapp.helpers.base.BaseActivity
 import com.circles.circlesapp.helpers.core.Constants
 import com.circles.circlesapp.helpers.retrofit.MyServiceInterceptor
 import com.circles.circlesapp.helpers.ui.GenericTextWatcher
+import com.circles.circlesapp.makeGone
 import com.circles.circlesapp.phase2.views.ui.Home2
 import com.circles.circlesapp.retrofit.RetrofitClient
 import com.circles.circlesapp.retrofit.responses.ForgetPassword
 import com.circles.circlesapp.retrofit.responses.LoginResponse
 import com.circles.circlesapp.retrofit.responses.ResetPassword
 import com.circles.circlesapp.show
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login_2.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -57,12 +56,12 @@ class LoginActivity : BaseActivity() {
         //end
 
         spinner.setOnClickListener {
-            //  if(cl_selectLangView.visibility==View.VISIBLE){
-            cl_selectLangView.show()
-            /* }else{
+            if (cl_selectLangView.visibility == View.VISIBLE) {
+                cl_selectLangView.show()
+            } else {
                  Toast.makeText(this,"go",Toast.LENGTH_SHORT).show()
                  cl_selectLangView.makeGone()
-             }*/
+            }
         }
         tv_english.setOnClickListener {
             Toast.makeText(this, "sh", Toast.LENGTH_SHORT).show()
@@ -121,46 +120,41 @@ class LoginActivity : BaseActivity() {
     }
 
     fun LoginViaEmail() {
-        var dataIntent = Intent(this@LoginActivity, Home2::class.java)
-
-        startActivity(dataIntent)
-
-        val email = et_userName.text.toString().trim()
+        val userName = et_userName.text.toString().trim()
         val passworde = et_password.text.toString().trim()
 
         if (passworde.isEmpty()) {
-            et_password.setError("Password required")
+            et_password.error = "Password required"
             et_password.requestFocus()
             return
         }
         if (passworde.length < 8) {
-            et_password.setError("Password should be atleast 8 character long")
+            et_password.error = "Password should be at least 8 character long"
             et_password.requestFocus()
             return
         }
-        if (email.isEmpty()) {
-            et_userName.setError("Email is required")
+        if (userName.isEmpty()) {
+            et_userName.error = "Email is required"
             et_userName.requestFocus()
             return
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            et_userName.setError("Enter a valid email")
+        if (userName.length < 3) {
+            et_userName.error = "Enter a valid userName"
             et_userName.requestFocus()
             return
         }
 
-       // callLoginApi(email, passworde)
+        callLoginApi(userName, passworde)
     }
 
-    private fun callLoginApi(email: String, passworde: String) {
+    private fun callLoginApi(userName: String, passworde: String) {
         val deviceToken = SharedPrefHelper(this).deviceToken
         var call: Call<LoginResponse> = RetrofitClient
                 .getInstance()
                 .api
-                .login(email, passworde, deviceToken)
+                .login(userName, passworde, deviceToken)
         call.enqueue(object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>?, t: Throwable?) {
-
                 Toast.makeText(this@LoginActivity, "network error", Toast.LENGTH_LONG).show()
 
             }
@@ -196,12 +190,12 @@ class LoginActivity : BaseActivity() {
                         dataIntent.putExtra("ACCESS_TOKEN", accessToken)
                         dataIntent.putExtra("TOKEN_TYPE", tokenType)
 
-                        SharedPrefHelper().saveLogin(this@LoginActivity, email, passworde)
+                        SharedPrefHelper().saveLogin(this@LoginActivity, userName, passworde)
                         startActivity(dataIntent)
                         finish()
 
                     } else {
-                        SharedPrefHelper().saveLogin(this@LoginActivity, email, passworde)
+                        SharedPrefHelper().saveLogin(this@LoginActivity, userName, passworde)
                         var intent = Intent(this@LoginActivity, ConfirmUserActivity::class.java)
                         startActivity(intent)
                         finish()
